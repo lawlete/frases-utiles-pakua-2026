@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Portugués - Congreso de Pa-Kua</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #2563eb;
+            --accent: #059669;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --phonetic-bg: #fef3c7;
+            --phonetic-text: #92400e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background-color: #ffffff;
+            color: var(--primary-light);
+            border: 1px solid #cbd5e1;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: background-color 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-back:active {
+            background-color: #f1f5f9;
+        }
+
+        .intro-box {
+            background: #e0f2fe;
+            border-left: 4px solid var(--primary-light);
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #0369a1;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin: 24px 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .phrase-pt {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .phonetic {
+            background-color: var(--phonetic-bg);
+            color: var(--phonetic-text);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .phrase-es {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-style: normal;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-play {
+            flex: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-play:active {
+            background-color: var(--primary);
+            transform: scale(0.98);
+        }
+
+        .btn-web {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background-color: #f1f5f9;
+            color: #475569;
+            text-decoration: none;
+            border: 1px solid #cbd5e1;
+            padding: 10px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            text-align: center;
+        }
+
+        .btn-web:active {
+            background-color: #e2e8f0;
+        }
+
+        .tips-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .tips-card h3 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .tips-card ul {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: #166534;
+        }
+
+        .tips-card li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 20px;
+            padding: 16px;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇧🇷 Guía de Portugués - Pa-Kua</h1>
+        <p>Frases esenciales para el Congreso Internacional</p>
+    </header>
+
+    <div class="container">
+
+        <a href="index.html" class="btn-back">⬅️ Volver al Menú Principal</a>
+
+        <div class="intro-box">
+            📲 <strong>¿Cómo usar esta guía desde tu celular?</strong><br>
+            • Toca el botón azul <strong>"🔊 Escuchar Audio"</strong> para escuchar la pronunciación directamente.<br>
+            • Si quieres abrir la traducción completa en Google, toca el botón gris <strong>"🌐 Traductor"</strong>.
+        </div>
+
+        <!-- SECCIÓN 1 -->
+        <div class="section-title">👋 1. Presentación y Saludos</div>
+
+        <div class="card">
+            <div class="phrase-pt">1. Oi! Tudo bem? Meu nome é Alfredo.</div>
+            <div class="phonetic">🗣️ Ói! Túdu bein? Méo nómi é Alfrédu.</div>
+            <div class="phrase-es">🇦🇷 Español: ¡Hola! ¿Todo bien? Mi nombre es Alfredo.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Oi! Tudo bem? Meu nome é Alfredo.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Oi!%20Tudo%20bem%3F%20Meu%20nome%20%C3%A9%20Alfredo.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">2. Muito prazer em te conhecer.</div>
+            <div class="phonetic">🗣️ Múintu prasér eing te conyesér.</div>
+            <div class="phrase-es">🇦🇷 Español: Mucho gusto en conocerte.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Muito prazer em te conhecer.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Muito%20prazer%20em%20te%20conhecer.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">3. Sou aluno da escola de Pa-Kua na Argentina.</div>
+            <div class="phonetic">🗣️ Sóu alúno da escóla dji Pa-Kua na Arjentína.</div>
+            <div class="phrase-es">🇦🇷 Español: Soy alumno de la escuela de Pa-Kua en Argentina.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Sou aluno da escola de Pa-Kua na Argentina.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Sou%20aluno%20da%20escola%20de%20Pa-Kua%20na%20Argentina.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">4. De qual recinto ou cidade você é?</div>
+            <div class="phonetic">🗣️ Dji cual resíntu óu sidádji vosé é?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿De qué recinto o ciudad sos?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('De qual recinto ou cidade você é?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=De%20qual%20recinto%20ou%20cidade%20voc%C3%AA%20%C3%A9%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">5. Você fala espanhol? Meu português ainda é básico!</div>
+            <div class="phonetic">🗣️ Vosé fala espanhyól? Méo portugüés aínda é básico!</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Hablas español? ¡Mi portugués todavía es básico!</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Você fala espanhol? Meu português ainda é básico!')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20fala%20espanhol%3F%20Meu%20portugu%C3%AAs%20ainda%20%C3%A9%20b%C3%A1sico!&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2 -->
+        <div class="section-title">⛩️ 2. Disciplinas y Práctica</div>
+
+        <div class="card">
+            <div class="phrase-pt">6. Eu pratico Cosmodinâmica, Arqueria e Arte Marcial.</div>
+            <div class="phonetic">🗣️ Éu pratíco Cosmodinámica, Arquería i Ártji Marsiál.</div>
+            <div class="phrase-es">🇦🇷 Español: Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Eu pratico Cosmodinâmica, Arqueria e Arte Marcial.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Eu%20pratico%20Cosmodin%C3%A2mica,%20Arqueria%20e%20Arte%20Marcial.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">7. Também gosto muito de Ritmo, Pa-Kua Chi e Massagem.</div>
+            <div class="phonetic">🗣️ Tambéing góstu múintu dji Rítmu, Pa-Kua Chi i Massájeing.</div>
+            <div class="phrase-es">🇦🇷 Español: También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Também gosto muito de Ritmo, Pa-Kua Chi e Massagem.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Tamb%C3%A9m%20gosto%20muito%20de%20Ritmo,%20Pa-Kua%20Chi%20e%20Massagem.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">8. Há quanto tempo você treina Pa-Kua?</div>
+            <div class="phonetic">🗣️ A cuántu témpu vosé tréina Pa-Kua?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Hace cuánto tiempo entrenas Pa-Kua?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Há quanto tempo você treina Pa-Kua?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=H%C3%A1%20quanto%20tempo%20voc%C3%AA%20treina%20Pa-Kua%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">9. Bom treino! / Boa prática!</div>
+            <div class="phonetic">🗣️ Boing tréinu! / Bóa práctica!</div>
+            <div class="phrase-es">🇦🇷 Español: ¡Buen entrenamiento! / ¡Buena práctica!</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Bom treino! Boa prática!')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Bom%20treino!%20Boa%20pr%C3%A1tica!&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">10. Podemos treinar juntos no próximo bloco?</div>
+            <div class="phonetic">🗣️ Podémos treinár júntos no prócsimu blócu?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Podemos entrenar juntos en el próximo bloque?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Podemos treinar juntos no próximo bloco?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Podemos%20treinar%20juntos%20no%20pr%C3%B3ximo%20bloco%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">11. Gostei muito dessa técnica, pode me mostrar de novo?</div>
+            <div class="phonetic">🗣️ Gostéi múintu dessa téc-nica, póji mi mostrár dji nóvu?</div>
+            <div class="phrase-es">🇦🇷 Español: Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Gostei muito dessa técnica, pode me mostrar de novo?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Gostei%20muito%20dessa%20t%C3%A9cnica,%20pode%20me%20mostrar%20de%20novo%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">12. Obrigado pelas dicas, ajudou muito!</div>
+            <div class="phonetic">🗣️ Obrigádu pélas djícas, ajudóu múintu!</div>
+            <div class="phrase-es">🇦🇷 Español: ¡Gracias por los consejos, sirvió mucho!</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Obrigado pelas dicas, ajudou muito!')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Obrigado%20pelas%20dicas,%20ajudou%20muito!&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3 -->
+        <div class="section-title">🤝 3. Socialización y Contacto</div>
+
+        <div class="card">
+            <div class="phrase-pt">13. Qual é o seu Instagram ou WhatsApp?</div>
+            <div class="phonetic">🗣️ Cual é o séu Instagram óu WhatsApp?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Cuál es tu Instagram o WhatsApp?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Qual é o seu Instagram ou WhatsApp?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Qual%20%C3%A9%20o%20seu%20Instagram%20ou%20WhatsApp%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">14. Vamos tirar uma foto juntos?</div>
+            <div class="phonetic">🗣️ Vámos tirár úma fótu júntos?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Sacamos una foto juntos?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Vamos tirar uma foto juntos?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Vamos%20tirar%20uma%20foto%20juntos%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">15. Onde a galera vai se reunir mais tarde?</div>
+            <div class="phonetic">🗣️ Óndji a galéra vái si reunír máis tárdji?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Dónde se junta el grupo más tarde?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Onde a galera vai se reunir mais tarde?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Onde%20a%20galera%20vai%20se%20reunir%20mais%20tarde%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">16. O evento está incrível, a energia está ótima!</div>
+            <div class="phonetic">🗣️ O evéntu está incrível, a enerjía está ótima!</div>
+            <div class="phrase-es">🇦🇷 Español: El evento está increíble, ¡la energía está buenísima!</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('O evento está incrível, a energia está ótima!')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=O%20evento%20est%C3%A1%20incr%C3%ADvel,%20a%20energia%20est%C3%A1%20%C3%B3tima!&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">17. Você vai participar do jantar de confraternização?</div>
+            <div class="phonetic">🗣️ Vosé vái partisipár do jantár dji confraternisasáong?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Vas a participar de la cena de confraternización?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Você vai participar do jantar de confraternização?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20vai%20participar%20do%20jantar%20de%20confraterniza%C3%A7%C3%A3o%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">18. Saúde! Um brinde a todos!</div>
+            <div class="phonetic">🗣️ Saúdji! Uing bríndji a tódos!</div>
+            <div class="phrase-es">🇦🇷 Español: ¡Salud! ¡Un brindis por todos!</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Saúde! Um brinde a todos!')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Sa%C3%BAde!%20Um%20brinde%20a%20todos!&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">19. Foi um prazer enorme treinar com você.</div>
+            <div class="phonetic">🗣️ Fói uing prasér enórmi treinár coing vosé.</div>
+            <div class="phrase-es">🇦🇷 Español: Fue un placer enorme entrenar contigo.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Foi um prazer enorme treinar com você.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Foi%20um%20prazer%20enorme%20treinar%20com%20voc%C3%AA.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">20. Até a próxima! Bom retorno pra casa.</div>
+            <div class="phonetic">🗣️ Até a prócsima! Boing retórnu pra cása.</div>
+            <div class="phrase-es">🇦🇷 Español: ¡Hasta la próxima! Buen regreso a casa.</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Até a próxima! Bom retorno pra casa.')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=At%C3%A9%20a%20pr%C3%B3xima!%20Bom%20retorno%20pra%20casa.&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4 -->
+        <div class="section-title">🏨 4. Hotel, Instalaciones y Paseos</div>
+
+        <div class="card">
+            <div class="phrase-pt">21. Onde fica a piscina e a academia do hotel?</div>
+            <div class="phonetic">🗣️ Óndji fíca a pissína i a acadêmia do otél?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Dónde queda la piscina y el gimnasio del hotel?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Onde fica a piscina e a academia do hotel?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Onde%20fica%20a%20piscina%20e%20a%20academia%20do%20hotel%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">22. Qual é o horário do café da manhã e do jantar?</div>
+            <div class="phonetic">🗣️ Cual é o orário do café da manyá i do jantár?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Cuál es el horario del desayuno y de la cena?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Qual é o horário do café da manhã e do jantar?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Qual%20%C3%A9%20o%20hor%C3%A1rio%20do%20caf%C3%A9%20da%20manh%C3%A3%20e%20do%20jantar%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">23. Onde fica o restaurante do hotel?</div>
+            <div class="phonetic">🗣️ Óndji fíca o restaurántji do otél?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Dónde queda el comedor / restaurante del hotel?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Onde fica o restaurante do hotel?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Onde%20fica%20o%20restaurante%20do%20hotel%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">24. A que horas servem o lanche da tarde?</div>
+            <div class="phonetic">🗣️ A que óras sérveing o lánchi da tárdji?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿A qué hora sirven la merienda?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('A que horas servem o lanche da tarde?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=A%20que%20horas%20servem%20o%20lanche%20da%20tarde%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">25. Alguém quer ir à piscina para relaxar um pouco?</div>
+            <div class="phonetic">🗣️ Alguéing quer ír à pissína pra relaxár uing póuco?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Alguien quiere ir a la piscina a relajarse un poco?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Alguém quer ir à piscina para relaxar um pouco?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Algu%C3%A9m%20quer%20ir%20%C3%A0%20piscina%20para%20relaxar%20um%20pouco%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">26. Você quer ir à academia treinar mais tarde?</div>
+            <div class="phonetic">🗣️ Vosé quer ír à acadêmia treinár máis tárdji?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Quieres ir al gimnasio a entrenar más tarde?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Você quer ir à academia treinar mais tarde?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20quer%20ir%20%C3%A0%20academia%20treinar%20mais%20tarde%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">27. Vamos fazer um passeio pela cidade hoje?</div>
+            <div class="phonetic">🗣️ Vámos fasér uing passéio péla sidádji óji?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Hacemos un paseo por la ciudad hoy?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Vamos fazer um passeio pela cidade hoje?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Vamos%20fazer%20um%20passeio%20pela%20cidade%20hoje%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">28. Você conhece algum lugar legal para passear perto daqui?</div>
+            <div class="phonetic">🗣️ Vosé conyési algúing lugár legál pra passeár pértu daquí?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Conoces algún lugar lindo para pasear cerca de aquí?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Você conhece algum lugar legal para passear perto daqui?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20conhece%20algum%20lugar%20legal%20para%20passear%20perto%20daqui%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">29. Qual é a senha do Wi-Fi do hotel?</div>
+            <div class="phonetic">🗣️ Cual é a sénia do Wi-Fi do otél?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Cuál es la clave del Wi-Fi del hotel?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Qual é a senha do Wi-Fi do hotel?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Qual%20%C3%A9%20a%20senha%20do%20Wi-Fi%20do%20hotel%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="phrase-pt">30. Onde posso pegar uma toalha para a piscina?</div>
+            <div class="phonetic">🗣️ Óndji póssu pegár úma toálha pra a pissína?</div>
+            <div class="phrase-es">🇦🇷 Español: ¿Dónde puedo pedir una toalla para la piscina?</div>
+            <div class="btn-group">
+                <button class="btn-play" onclick="speak('Onde posso pegar uma toalha para a piscina?')">🔊 Escuchar Audio</button>
+                <a class="btn-web" href="https://translate.google.com/?sl=pt&tl=es&text=Onde%20posso%20pegar%20uma%20toalha%20para%20a%20piscina%3F&op=translate" target="_blank">🌐 Traductor</a>
+            </div>
+        </div>
+
+        <!-- CONSEJOS CLAVE -->
+        <div class="tips-card">
+            <h3>💡 Claves de Pronunciación Brasileña</h3>
+            <ul>
+                <li><strong>"DE / DI":</strong> Suena como <em>"DJE / DJI"</em> (ej. <em>cidade</em> → <em>sidádji</em>).</li>
+                <li><strong>"TE / TI":</strong> Suena como <em>"TCHE / TCHI"</em> (ej. <em>restaurante</em> → <em>restaurántji</em>).</li>
+                <li><strong>"Lanche da tarde":</strong> Es la expresión brasileña para la merienda.</li>
+                <li><strong>"Academia":</strong> Es la palabra usada para el gimnasio.</li>
+                <li><strong>"R" al inicio o doble "RR":</strong> Suena suavemente como una "J" en español (ej. <em>retorno</em> → <em>jetórnu</em>).</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-back">⬅️ Volver al Menú Principal</a>
+
+    </div>
+
+    <footer>
+        Realizado por Alfredo, alumno de la Escuela Pakua Lincoln, Bs.As., Argentina. ☯️
+    </footer>
+
+    <script>
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                var utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 0.88;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                window.open('https://translate.google.com/?sl=pt&tl=es&text=' + encodeURIComponent(text) + '&op=translate', '_blank');
+            }
+        }
+    </script>
+
+</body>
+</html>

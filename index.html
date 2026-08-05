@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías de Idiomas - Congreso de Pa-Kua</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #2563eb;
+            --teal: #0f766e;
+            --teal-light: #0d9488;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%);
+            color: white;
+            padding: 32px 16px 24px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        .welcome-box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .welcome-box strong {
+            color: var(--text-dark);
+        }
+
+        .lang-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .lang-card:active {
+            transform: scale(0.98);
+        }
+
+        .lang-card.pt {
+            border-left: 6px solid #2563eb;
+        }
+
+        .lang-card.en {
+            border-left: 6px solid #0d9488;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .flag-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .btn-enter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .pt .btn-enter {
+            background-color: var(--primary-light);
+        }
+
+        .en .btn-enter {
+            background-color: var(--teal-light);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 30px;
+            padding: 16px;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>☯️ Guías de Idiomas - Pa-Kua</h1>
+        <p>Congreso Internacional</p>
+    </header>
+
+    <div class="container">
+
+        <div class="welcome-box">
+            📲 <strong>¡Bienvenido/a!</strong><br>
+            Selecciona el idioma para acceder a la guía interactiva con frases esenciales, pronunciación fonética y audio integrado para escuchar directamente en tu celular.
+        </div>
+
+        <!-- PORTUGUÉS -->
+        <a href="portugues.html" class="lang-card pt">
+            <div class="card-header">
+                <span class="flag-icon">🇧🇷</span>
+                <div class="card-title">Guía de Portugués</div>
+            </div>
+            <div class="card-desc">
+                30 frases esenciales para saludos, entrenamientos de Pa-Kua, socialización e instalaciones del hotel en Brasil.
+            </div>
+            <div class="btn-enter">
+                🔊 Abrir Guía de Portugués ➔
+            </div>
+        </a>
+
+        <!-- INGLÉS -->
+        <a href="ingles.html" class="lang-card en">
+            <div class="card-header">
+                <span class="flag-icon">🇺🇸</span>
+                <div class="card-title">Guía de Inglés</div>
+            </div>
+            <div class="card-desc">
+                30 frases esenciales para interactuar y practicar con colegas de las escuelas de Pa-Kua de todo el mundo.
+            </div>
+            <div class="btn-enter">
+                🔊 Abrir Guía de Inglés ➔
+            </div>
+        </a>
+
+    </div>
+
+    <footer>
+        Realizado por Alfredo, alumno de la Escuela Pakua Lincoln, Bs.As., Argentina. ☯️
+    </footer>
+
+</body>
+</html>
