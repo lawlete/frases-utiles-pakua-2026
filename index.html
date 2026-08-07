@@ -28,6 +28,32 @@
             color: var(--text-dark);
             line-height: 1.5;
             padding-bottom: 40px;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85vw;
+            max-width: 500px;
+            height: 85vw;
+            max-height: 500px;
+            background-image: url('Logo Pakua.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header, .container, footer {
+            position: relative;
+            z-index: 1;
         }
 
         header {
