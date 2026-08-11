@@ -19,8 +19,15 @@ Dado que el repositorio en GitHub es público y en plataformas de archivos está
 
 ---
 
+## 🏆 Ranking Top 10 con Traducción al Español Automática
+
+- Se expandió el ranking de frases a **Top 10** en lugar de Top 5.
+- Cuando la frase consultada está en idioma extranjero (`[DE]`, `[EN]`, `[PT]`), la plataforma incluye automáticamente debajo entre paréntesis la **traducción equivalente al español en verde** `(🇦🇷 ...)` para facilitar la rápida lectura del administrador.
+
+---
+
 ## 🛠️ Archivos Modificados
 
-- **[stats.js](file:///c:/Users/Alfredo/Desktop/Alfredo/Pakua/stats.js)**: Incorpora validación hash SHA-256, decodificación transparente de MasterKey y renderizado del Dashboard con Chart.js.
+- **[stats.js](file:///c:/Users/Alfredo/Desktop/Alfredo/Pakua/stats.js)**: Incorpora ranking Top 10 con diccionario de traducción al castellano, validación hash SHA-256, decodificación transparente de MasterKey y renderizado del Dashboard con Chart.js.
 - **[index.html](file:///c:/Users/Alfredo/Desktop/Alfredo/Pakua/index.html)**: Botón `📊 Estadísticas` en pie de página e integración del script.
 - **[portugues.html](file:///c:/Users/Alfredo/Desktop/Alfredo/Pakua/portugues.html)**, **[ingles.html](file:///c:/Users/Alfredo/Desktop/Alfredo/Pakua/ingles.html)**, **[aleman.html](file:///c:/Users/Alfredo/Desktop/Alfredo/Pakua/aleman.html)**: Rastreo automático de visitas, permanencia y reproducciones de voz/traductor.

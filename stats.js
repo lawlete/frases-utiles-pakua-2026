@@ -515,9 +515,9 @@ const PakuaStats = (function () {
 
             </div>
 
-            <!-- RANKING TOP 5 FRASES -->
+            <!-- RANKING TOP 10 FRASES -->
             <div style="background: white; border-radius: 14px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 24px;">
-                <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">🏆 Top 5 Frases Más Consultadas por los Alumnos</h4>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">🏆 Top 10 Frases Más Consultadas por los Alumnos</h4>
                 <div id="top-phrases-list">
                     ${renderTopPhrasesList(sum.topPhrases)}
                 </div>
@@ -561,24 +561,133 @@ const PakuaStats = (function () {
         });
     }
 
+    const SPANISH_TRANSLATIONS = {
+        // Alemán (DE)
+        "Hallo! Wie geht es dir? Mein Name ist Alfredo.": "¡Hola! ¿Cómo estás? Mi nombre es Alfredo.",
+        "Schön, dich kennenzulernen!": "¡Mucho gusto en conocerte!",
+        "Ich bin Pa-Kua Schüler in Argentinien.": "Soy alumno de la escuela de Pa-Kua en Argentina.",
+        "Aus welcher Schule oder Stadt kommst du?": "¿De qué escuela o ciudad sos?",
+        "Sprichst du Spanisch? Ich habe Basis-Deutschkenntnisse.": "¿Hablás español? ¡Tengo conocimientos básicos de alemán!",
+        "Sprichst du Spanisch? Ich habe Basis-Englischkenntnisse.": "¿Hablás español? ¡Tengo conocimientos básicos de alemán!",
+        "Ich übe Kosmo, Bogenschießen und Kampfkunst.": "Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
+        "Ich mag auch sehr Rhythmus, Pa-Kua Chi und Massagen.": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+        "Wie lange trainierst du schon Pa-Kua?": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+        "Hab ein gutes Training! / Gute Übung!": "¡Buen entrenamiento! / ¡Buena práctica!",
+        "Können wir im nächsten Block zusammen trainieren?": "¿Podemos entrenar juntos en el próximo bloque?",
+        "Mir hat diese Technik sehr gefallen, kannst du sie mir nochmal zeigen?": "Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
+        "Danke für die Tipps, das war sehr hilfreich!": "¡Gracias por los consejos, fue muy útil!",
+        "Was ist dein Instagram oder WhatsApp?": "¿Cuál es tu Instagram o WhatsApp?",
+        "Sollen wir ein Foto zusammen machen?": "¿Hacemos una foto juntos?",
+        "Wo trifft sich die Gruppe später?": "¿Dónde se junta el grupo más tarde?",
+        "Die Veranstaltung ist großartig, die Energie ist fantastisch!": "El evento es grandioso, ¡la energía es fantástica!",
+        "Gehst du zum Gruppen-Dinner?": "¿Vas a la cena del grupo?",
+        "Prost! Ein Toast auf alle!": "¡Salud! ¡Un brindis por todos!",
+        "Es war eine große Freude, mit dir zu üben.": "Fue un gran placer entrenar contigo.",
+        "Bis zum nächsten Mal! Gute Heimreise.": "¡Hasta la próxima! Buen regreso a casa.",
+        "Wo befinden sich der Pool und das Fitnessstudio?": "¿Dónde quedan la piscina y el gimnasio del hotel?",
+        "Um wie viel Uhr gibt es Frühstück und Abendessen?": "¿A qué hora hay desayuno y cena?",
+        "Wo ist das Hotelrestaurant?": "¿Dónde está el restaurante del hotel?",
+        "Um wie viel Uhr gibt es die Nachmittagsjause?": "¿A qué hora sirven la merienda?",
+        "Möchte jemand zum Pool gehen, um sich zu entspannen?": "¿Alguien quiere ir a la piscina a relajarse?",
+        "Möchtest du später ins Fitnessstudio gehen, um zu trainieren?": "¿Querés ir más tarde al gimnasio a entrenar?",
+        "Sollen wir heute einen Spaziergang durch die Stadt machen?": "¿Hacemos un paseo por la ciudad hoy?",
+        "Kennst du schöne Orte in der Nähe, die man besuchen kann?": "¿Conocés lugares lindos cerca que se puedan visitar?",
+        "Was ist das WLAN-Passwort des Hotels?": "¿Cuál es la clave del Wi-Fi del hotel?",
+        "Wo kann ich ein Handtuch für den Pool bekommen?": "¿Dónde puedo conseguir una toalla para la piscina?",
+
+        // Inglés (EN)
+        "Hi! How are you? My name is Alfredo.": "¡Hola! ¿Cómo estás? Mi nombre es Alfredo.",
+        "Nice to meet you.": "Mucho gusto en conocerte.",
+        "I am a student at the Pa-Kua school in Argentina.": "Soy alumno de la escuela de Pa-Kua en Argentina.",
+        "Which school or city are you from?": "¿De qué escuela o ciudad sos?",
+        "Do you speak Spanish? My English is basic!": "¿Hablás español? ¡Mi inglés es básico!",
+        "I practice Cosmodynamics, Archery, and Martial Arts.": "Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
+        "I also really like Rhythm, Pa-Kua Chi, and Massage.": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+        "How long have you been training Pa-Kua?": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+        "Have a good training session! Great practice!": "¡Buen entrenamiento! ¡Buena práctica!",
+        "Have a good training session! / Great practice!": "¡Buen entrenamiento! / ¡Buena práctica!",
+        "Can we train together in the next block?": "¿Podemos entrenar juntos en el próximo bloque?",
+        "I really liked that technique, can you show me again?": "Me gustó mucho esa técnica, ¿me la podés mostrar de nuevo?",
+        "Thank you for the tips, that was very helpful!": "¡Gracias por los consejos, sirvió mucho!",
+        "What is your Instagram or WhatsApp?": "¿Cuál es tu Instagram o WhatsApp?",
+        "Shall we take a picture together?": "¿Sacamos una foto juntos?",
+        "Where is everyone meeting later?": "¿Dónde se junta el grupo más tarde?",
+        "The event is amazing, the energy is great!": "El evento está increíble, ¡la energía está buenísima!",
+        "Are you going to the group dinner?": "¿Vas a participar de la cena de confraternización?",
+        "Cheers! A toast to everyone!": "¡Salud! ¡Un brindis por todos!",
+        "It was a great pleasure training with you.": "Fue un placer enorme entrenar contigo.",
+        "See you next time! Have a safe trip home.": "¡Hasta la próxima! Buen regreso a casa.",
+        "Where is the pool and the gym located?": "¿Dónde queda la piscina y el gimnasio del hotel?",
+        "What time is breakfast and dinner served?": "¿Cuál es el horario del desayuno y de la cena?",
+        "Where is the hotel restaurant?": "¿Dónde queda el comedor o restaurante del hotel?",
+        "What time is the afternoon snack served?": "¿A qué hora sirven la merienda?",
+        "Does anyone want to go to the pool to relax?": "¿Alguien quiere ir a la piscina a relajarse un poco?",
+        "Would you like to go to the gym to workout later?": "¿Querés ir al gimnasio a entrenar más tarde?",
+        "Shall we go for a walk in the city today?": "¿Hacemos un paseo por la ciudad hoy?",
+        "Do you know any nice places to visit near here?": "¿Conocés algún lugar lindo para pasear cerca de aquí?",
+        "What is the Wi-Fi password for the hotel?": "¿Cuál es la clave del Wi-Fi del hotel?",
+        "Where can I get a towel for the pool?": "¿Dónde puedo pedir una toalla para la piscina?",
+
+        // Portugués (PT)
+        "Oi! Tudo bem? Meu nome é Alfredo.": "¡Hola! ¿Todo bien? Mi nombre es Alfredo.",
+        "Muito prazer em te conhecer.": "Mucho gusto en conocerte.",
+        "Sou aluno da escola de Pa-Kua na Argentina.": "Soy alumno de la escuela de Pa-Kua en Argentina.",
+        "De qual recinto ou cidade você é?": "¿De qué recinto o ciudad sos?",
+        "Você fala espanhol? Meu português ainda é básico!": "¿Hablas español? ¡Mi portugués todavía es básico!",
+        "Eu pratico Cosmodinâmica, Arqueria e Arte Marcial.": "Practico Cosmodinámica, Arquería y Arte Marcial.",
+        "Também gosto muito de Ritmo, Pa-Kua Chi e Massagem.": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+        "Há quanto tempo você treina Pa-Kua?": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+        "Bom treino! / Boa prática!": "¡Buen entrenamiento! / ¡Buena práctica!",
+        "Podemos treinar juntos no próximo bloco?": "¿Podemos entrenar juntos en el próximo bloque?",
+        "Gostei muito dessa técnica, pode me mostrar de novo?": "Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
+        "Obrigado pelas dicas, ajudou muito!": "¡Gracias por los consejos, sirvió mucho!",
+        "Qual é o seu Instagram ou WhatsApp?": "¿Cuál es tu Instagram ou WhatsApp?",
+        "Vamos tirar uma foto juntos?": "¿Sacamos una foto juntos?",
+        "Onde o grupo vai se reunir mais tarde?": "¿Dónde se junta el grupo más tarde?",
+        "O evento está incrível, a energia está demais!": "El evento está increíble, ¡la energía está buenísima!",
+        "Você vai no jantar do grupo?": "¿Vas a participar de la cena de confraternización?",
+        "Saúde! Um brinde a todos!": "¡Salud! ¡Un brindis por todos!",
+        "Foi um grande prazer treinar com você.": "Fue un placer enorme entrenar contigo.",
+        "Até a próxima! Boa viagem de volta.": "¡Hasta la próxima! Buen regreso a casa.",
+        "Onde fica a piscina e a academia do hotel?": "¿Dónde queda la piscina y el gimnasio del hotel?",
+        "Qual é o horário do café da manhã e do jantar?": "¿Cuál es el horário del desayuno y de la cena?",
+        "Onde fica o restaurante do hotel?": "¿Dónde queda el restaurante del hotel?",
+        "Que horas é servido o café da tarde?": "¿A qué hora sirven la merienda?",
+        "Alguém quer ir para a piscina relaxar um pouco?": "¿Alguien quiere ir a la piscina a relajarse un poco?",
+        "Quer ir à academia treinar mais tarde?": "¿Querés ir al gimnasio a entrenar más tarde?",
+        "Vamos dar um passeio pela cidade hoje?": "¿Hacemos un paseo por la ciudad hoy?",
+        "Conhece algum lugar legal para passear por perto?": "¿Conocés algún lugar lindo para pasear cerca de aquí?",
+        "Qual é a senha do Wi-Fi do hotel?": "¿Cuál es la clave del Wi-Fi del hotel?",
+        "Onde posso conseguir uma toalha para a piscina?": "¿Dónde puedo pedir una toalla para la piscina?"
+    };
+
     function renderTopPhrasesList(topPhrases) {
         const sorted = Object.entries(topPhrases || {})
             .sort((a, b) => b[1] - a[1])
-            .slice(0, 5);
+            .slice(0, 10);
 
         if (sorted.length === 0) {
             return `<div style="color: #94a3b8; font-size: 0.9rem;">Aún no se han registrado reproducciones de frases.</div>`;
         }
 
-        return sorted.map(([phrase, count], idx) => `
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #f8fafc; border-radius: 8px; margin-bottom: 8px; border: 1px solid #e2e8f0;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <span style="font-weight: 800; color: #2563eb; font-size: 1.1rem; width: 24px;">#${idx + 1}</span>
-                    <span style="font-weight: 600; color: #1e293b; font-size: 0.95rem;">${phrase}</span>
+        return sorted.map(([phraseKey, count], idx) => {
+            const isSpanish = phraseKey.startsWith('[ES]');
+            const rawText = phraseKey.replace(/^\[(DE|EN|PT|ES)\]\s*/, '').trim();
+            const translation = !isSpanish ? SPANISH_TRANSLATIONS[rawText] : null;
+
+            return `
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; padding: 12px 14px; background: #f8fafc; border-radius: 10px; margin-bottom: 10px; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px; flex: 1; padding-right: 12px;">
+                        <span style="font-weight: 800; color: #2563eb; font-size: 1.1rem; min-width: 28px; margin-top: 2px;">#${idx + 1}</span>
+                        <div>
+                            <div style="font-weight: 600; color: #1e293b; font-size: 0.95rem; line-height: 1.3;">${phraseKey}</div>
+                            ${translation ? `<div style="font-size: 0.85rem; color: #059669; font-weight: 600; margin-top: 3px;">(🇦🇷 ${translation})</div>` : ''}
+                        </div>
+                    </div>
+                    <span style="background: #dbeafe; color: #1e40af; font-weight: 700; padding: 4px 10px; border-radius: 20px; font-size: 0.82rem; white-space: nowrap; flex-shrink: 0;">${count} clics</span>
                 </div>
-                <span style="background: #dbeafe; color: #1e40af; font-weight: 700; padding: 4px 10px; border-radius: 20px; font-size: 0.82rem;">${count} clics</span>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     function formatDate(isoStr) {
