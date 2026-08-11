@@ -444,6 +444,16 @@ const PakuaStats = (function () {
             }
         });
 
+        let topPhraseSubtext = '';
+        if (topPhraseText !== 'Ninguna aún') {
+            const isSpanish = topPhraseText.startsWith('[ES]');
+            const rawText = topPhraseText.replace(/^\[(DE|EN|PT|ES)\]\s*/, '').trim();
+            const translation = !isSpanish ? SPANISH_TRANSLATIONS[rawText] : null;
+            if (translation) {
+                topPhraseSubtext = `<div style="font-size: 0.78rem; color: #059669; font-weight: 600; margin-top: 2px;">(🇦🇷 ${translation})</div>`;
+            }
+        }
+
         // Encontrar país principal
         let topCountryText = 'Desconocido';
         let topCountryCount = 0;
@@ -477,7 +487,8 @@ const PakuaStats = (function () {
 
                 <div style="background: white; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
                     <div style="font-size: 0.82rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Frase Más Escuchada</div>
-                    <div style="font-size: 0.95rem; font-weight: 700; color: #991b1b; margin-top: 6px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" title="${topPhraseText}">${topPhraseText}</div>
+                    <div style="font-size: 0.95rem; font-weight: 700; color: #991b1b; margin-top: 6px; line-height: 1.2;" title="${topPhraseText}">${topPhraseText}</div>
+                    ${topPhraseSubtext}
                     <div style="font-size: 0.78rem; color: #64748b; margin-top: 4px;">🔊 ${topPhraseCount} reproducciones</div>
                 </div>
             </div>
