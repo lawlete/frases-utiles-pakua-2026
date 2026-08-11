@@ -659,8 +659,22 @@
         </div>
     </footer>
 
+    <script src="stats.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            PakuaStats.initSession('ingles.html');
+
+            document.querySelectorAll('.btn-web').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    PakuaStats.trackTranslate(this.href);
+                });
+            });
+        });
+
         function speak(text, lang = 'en-US') {
+            if (typeof PakuaStats !== 'undefined') {
+                PakuaStats.trackAudio(text, lang);
+            }
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
                 var utterance = new SpeechSynthesisUtterance(text);
@@ -673,6 +687,5 @@
             }
         }
     </script>
-
 </body>
 </html>

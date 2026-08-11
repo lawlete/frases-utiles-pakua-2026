@@ -293,6 +293,9 @@
     </div>
 
     <footer>
+        <div style="margin-bottom: 10px;">
+            <button id="btn-admin-stats" onclick="PakuaStats.openAdminPrompt()" style="background: #1e3a8a; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 0.85rem; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: transform 0.2s;">📊 Estadísticas</button>
+        </div>
         <div>Realizado por Alfredo, alumno de la Escuela Pakua Lincoln, Bs.As., Argentina. ☯️</div>
         <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #cbd5e1; font-size: 0.82rem; color: #475569; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
             <span>Desarrollado por:</span>
@@ -301,5 +304,11 @@
         </div>
     </footer>
 
+    <script src="stats.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            PakuaStats.initSession('index.html');
+        });
+    </script>
 </body>
 </html>
