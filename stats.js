@@ -5,10 +5,10 @@
 
 const PakuaStats = (function () {
     const CONFIG = {
-        binId: '6a7b9f87da38895dfed7c6c2',
+        binId: '6a7c90c5da38895dfedb3b89',
         masterKeyEnc: 'JDJhJDEwJEdmRkNJbU5BYjdNUEYvbGtPcG9ZdHVtVThZdEc5MnFzMDVPS2VjOVpHSWFIQVdmNVk5dFAu',
         adminPassHash: '3fcea91fecaf485b0b02fc76e00d4c100c275a805ba35421f1adffd1733d4d8e',
-        endpoint: 'https://api.jsonbin.io/v3/b/6a7b9f87da38895dfed7c6c2',
+        endpoint: 'https://api.jsonbin.io/v3/b/6a7c90c5da38895dfedb3b89',
         storageKey: 'pakua_stats_v1',
         sessionKey: 'pakua_session_active'
     };
@@ -403,9 +403,12 @@ const PakuaStats = (function () {
                 </div>
 
                 <!-- FOOTER DASHBOARD -->
-                <div style="padding: 14px 24px; background: #e2e8f0; border-top: 1px solid #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; font-size: 0.85rem; color: #475569;">
-                    <span>Conectado a <strong>JSONBin.io</strong> | Respaldo Local Activo</span>
-                    <button id="pakua-btn-reset" style="background: #dc2626; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.8rem;">🗑️ Reiniciar Datos</button>
+                <div style="padding: 14px 24px; background: #e2e8f0; border-top: 1px solid #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; flex-shrink: 0; font-size: 0.85rem; color: #475569;">
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <button id="pakua-btn-scroll-top" style="background: #2563eb; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s;" title="Volver a la parte superior de esta pantalla">⬆️ Volver al inicio de esta pantalla</button>
+                        <button id="pakua-btn-main-menu" style="background: #0f766e; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s;" title="Ir al Menú Principal (index.html)">🏠 Menú Principal</button>
+                    </div>
+                    <button id="pakua-btn-reset" style="background: #dc2626; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.82rem; transition: opacity 0.2s;">🗑️ Reiniciar estadísticas a cero</button>
                 </div>
 
             </div>
@@ -416,6 +419,13 @@ const PakuaStats = (function () {
         document.getElementById('pakua-btn-refresh').onclick = renderDashboardContent;
         document.getElementById('pakua-btn-export').onclick = exportJson;
         document.getElementById('pakua-btn-reset').onclick = resetStats;
+        document.getElementById('pakua-btn-scroll-top').onclick = () => {
+            const body = document.getElementById('pakua-dash-body');
+            if (body) body.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        document.getElementById('pakua-btn-main-menu').onclick = () => {
+            window.location.href = 'index.html';
+        };
 
         await renderDashboardContent();
     }
@@ -535,7 +545,7 @@ const PakuaStats = (function () {
             </div>
 
             <!-- TABLA DE HISTORIAL DE ACCESOS -->
-            <div style="background: white; border-radius: 14px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+            <div style="background: white; border-radius: 14px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 24px;">
                 <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">📋 Historial Reciente de Sesiones (${stats.logs.length})</h4>
                 <div style="overflow-x: auto;">
                     <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
@@ -563,6 +573,16 @@ const PakuaStats = (function () {
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- BOTONES DE NAVEGACIÓN EN EL CUERPO INFERIOR -->
+            <div style="display: flex; justify-content: center; gap: 14px; padding: 18px 0 10px 0; border-top: 1px solid #cbd5e1; flex-wrap: wrap;">
+                <button onclick="document.getElementById('pakua-dash-body').scrollTo({ top: 0, behavior: 'smooth' });" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.92rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    ⬆️ Volver al inicio de esta pantalla
+                </button>
+                <button onclick="window.location.href='index.html';" style="background: #0f766e; color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.92rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    🏠 Menú Principal
+                </button>
             </div>
         `;
 
@@ -800,13 +820,71 @@ const PakuaStats = (function () {
     }
 
     async function resetStats() {
-        if (confirm('⚠️ ¿Estás seguro de que deseas reiniciar TODAS las estadísticas? Esta acción no se puede deshacer.')) {
-            const initial = getInitialStats();
-            saveLocalStats(initial);
-            await pushRemoteStats(initial);
-            alert('✅ Estadísticas reiniciadas con éxito.');
-            renderDashboardContent();
-        }
+        let modal = document.getElementById('pakua-reset-auth-modal');
+        if (modal) modal.remove();
+
+        modal = document.createElement('div');
+        modal.id = 'pakua-reset-auth-modal';
+        modal.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px);
+            z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 16px;
+        `;
+
+        modal.innerHTML = `
+            <div style="background: #ffffff; border-radius: 16px; max-width: 420px; width: 100%; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                <div style="font-size: 3rem; margin-bottom: 8px;">⚠️</div>
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: #dc2626; margin-bottom: 8px;">Reiniciar Estadísticas a Cero</h3>
+                <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px; line-height: 1.4;">
+                    Esta acción eliminará todas las métricas acumuladas local y remotamente.<br>
+                    Ingresa la palabra <strong>"confirmar"</strong> para proceder:
+                </p>
+                <input type="password" id="pakua-reset-pass-input" placeholder="Escribe confirmar..." style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 10px; border: 2px solid #cbd5e1; outline: none; margin-bottom: 16px; text-align: center;">
+                <div id="pakua-reset-auth-error" style="color: #ef4444; font-size: 0.85rem; display: none; margin-bottom: 12px; font-weight: 600;">⚠️ Clave incorrecta. Acción cancelada.</div>
+                <div style="display: flex; gap: 10px;">
+                    <button id="pakua-btn-cancel-reset" style="flex: 1; padding: 12px; border-radius: 10px; background: #f1f5f9; color: #475569; font-weight: 600; border: none; cursor: pointer;">Cancelar</button>
+                    <button id="pakua-btn-confirm-reset" style="flex: 1; padding: 12px; border-radius: 10px; background: #dc2626; color: white; font-weight: 700; border: none; cursor: pointer;">Reiniciar ➔</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        const passInput = document.getElementById('pakua-reset-pass-input');
+        const btnConfirm = document.getElementById('pakua-btn-confirm-reset');
+        const btnCancel = document.getElementById('pakua-btn-cancel-reset');
+        const authError = document.getElementById('pakua-reset-auth-error');
+
+        passInput.focus();
+
+        btnCancel.onclick = () => {
+            modal.remove();
+            alert('Acción cancelada. No se han modificado las estadísticas.');
+        };
+
+        const executeReset = async () => {
+            const hashOfConfirm = '2828ec2c3aeaa5becf212f58be99c958a662147a2df77442d2c798334421d2a0';
+            const enteredHash = await hashText(passInput.value || '');
+            if (enteredHash === hashOfConfirm) {
+                modal.remove();
+                const initial = getInitialStats();
+                saveLocalStats(initial);
+                await pushRemoteStats(initial);
+                alert('Estadísticas reiniciadas con éxito');
+                renderDashboardContent();
+            } else {
+                authError.style.display = 'block';
+                setTimeout(() => {
+                    modal.remove();
+                    alert('Acción cancelada. La clave ingresada es incorrecta.');
+                }, 1000);
+            }
+        };
+
+        btnConfirm.addEventListener('click', executeReset);
+        passInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') executeReset();
+        });
     }
 
     return {
