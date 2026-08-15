@@ -504,7 +504,8 @@ const PakuaStats = (function () {
             </div>
 
             <!-- SECCIÓN DE GRÁFICOS -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 24px;">
+            <!-- Fila 1: Métricas de Audiencia y Uso -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px;">
                 
                 <div style="background: white; border-radius: 14px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
                     <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">🌐 Países de Origen (por IP)</h4>
@@ -527,6 +528,11 @@ const PakuaStats = (function () {
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Fila 2: Gráficos de Torta de Interacción y Dispositivo (A la Derecha) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 24px;">
+                
                 <div style="background: white; border-radius: 14px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
                     <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">🔊 Tipo de Interacción (Audio vs Traductor)</h4>
                     <div style="position: relative; height: 220px;">
