@@ -534,6 +534,13 @@ const PakuaStats = (function () {
                     </div>
                 </div>
 
+                <div style="background: white; border-radius: 14px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                    <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">📱 Tipo de Dispositivo (Android / iOS / PC)</h4>
+                    <div style="position: relative; height: 220px;">
+                        <canvas id="chart-devices"></canvas>
+                    </div>
+                </div>
+
             </div>
 
             <!-- RANKING TOP 10 FRASES -->
@@ -603,6 +610,7 @@ const PakuaStats = (function () {
         "Ich übe Kosmo, Bogenschießen und Kampfkunst.": "Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
         "Ich mag auch sehr Rhythmus, Pa-Kua Chi und Massagen.": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
         "Wie lange trainierst du schon Pa-Kua?": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+        "Welche Masterabschlüsse praktizieren Sie in Pa-Kua am längsten?": "¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
         "Hab ein gutes Training! / Gute Übung!": "¡Buen entrenamiento! / ¡Buena práctica!",
         "Können wir im nächsten Block zusammen trainieren?": "¿Podemos entrenar juntos en el próximo bloque?",
         "Mir hat diese Technik sehr gefallen, kannst du sie mir nochmal zeigen?": "Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
@@ -635,6 +643,7 @@ const PakuaStats = (function () {
         "I practice Cosmodynamics, Archery, and Martial Arts.": "Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
         "I also really like Rhythm, Pa-Kua Chi, and Massage.": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
         "How long have you been training Pa-Kua?": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+        "What are the master's degrees that you have been practicing the longest in Pa-Kua?": "¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
         "Have a good training session! Great practice!": "¡Buen entrenamiento! ¡Buena práctica!",
         "Have a good training session! / Great practice!": "¡Buen entrenamiento! / ¡Buena práctica!",
         "Can we train together in the next block?": "¿Podemos entrenar juntos en el próximo bloque?",
@@ -668,6 +677,7 @@ const PakuaStats = (function () {
         "Eu pratico Cosmodinâmica, Arqueria e Arte Marcial.": "Practico Cosmodinámica, Arquería y Arte Marcial.",
         "Também gosto muito de Ritmo, Pa-Kua Chi e Massagem.": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
         "Há quanto tempo você treina Pa-Kua?": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+        "Quais são os mestrados que você pratica há mais tempo em Pa-Kua?": "¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
         "Bom treino! / Boa prática!": "¡Buen entrenamiento! / ¡Buena práctica!",
         "Podemos treinar juntos no próximo bloco?": "¿Podemos entrenar juntos en el próximo bloque?",
         "Gostei muito dessa técnica, pode me mostrar de novo?": "Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
@@ -801,6 +811,28 @@ const PakuaStats = (function () {
                             sum.interactionTypes.googleTranslate || 0
                         ],
                         backgroundColor: ['#3b82f6', '#10b981', '#f59e0b']
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        // Chart 5: Tipo de Dispositivo
+        const ctxDevices = document.getElementById('chart-devices');
+        if (ctxDevices) {
+            const devData = sum.devices || { Android: 0, iOS: 0, Desktop: 0, Otro: 0 };
+            new Chart(ctxDevices, {
+                type: 'pie',
+                data: {
+                    labels: ['Android 📱', 'iOS (iPhone/iPad) 🍏', 'Desktop (PC/Mac) 💻', 'Otro ❓'],
+                    datasets: [{
+                        data: [
+                            devData.Android || 0,
+                            devData.iOS || 0,
+                            devData.Desktop || 0,
+                            devData.Otro || 0
+                        ],
+                        backgroundColor: ['#3b82f6', '#10b981', '#6366f1', '#f59e0b']
                     }]
                 },
                 options: { responsive: true, maintainAspectRatio: false }
