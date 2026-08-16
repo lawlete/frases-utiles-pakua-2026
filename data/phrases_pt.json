@@ -1,0 +1,527 @@
+{
+  "language": "pt-BR",
+  "title": "Portugués",
+  "flag": "🇧🇷",
+  "sections": [
+    {
+      "id": 1,
+      "title": "👋 1. Presentación y Saludos",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Oi! Tudo bem? Meu nome é Alfredo.",
+          "phonetic": "🗣️ Ói! Túdu bein? Méo nómi é Alfrédu.",
+          "translation": "🇦🇷 Español: ¡Hola! ¿Todo bien? Mi nombre es Alfredo.",
+          "audio": "assets/audio/pt/phrase_01.mp3",
+          "tts": {
+            "text": "Oi! Tudo bem? Meu nome é Alfredo.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¡Hola! ¿Todo bien? Mi nombre es Alfredo.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Oi!%20Tudo%20bem%3F%20Meu%20nome%20%C3%A9%20Alfredo.&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Muito prazer em te conhecer.",
+          "phonetic": "🗣️ Múintu prasér eing te conyesér.",
+          "translation": "🇦🇷 Español: Mucho gusto en conocerte.",
+          "audio": "assets/audio/pt/phrase_02.mp3",
+          "tts": {
+            "text": "Muito prazer em te conhecer.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "Mucho gusto en conocerte.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Muito%20prazer%20em%20te%20conhecer.&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Sou aluno da escola de Pa-Kua na Argentina.",
+          "phonetic": "🗣️ Sóu alúno da escóla dji Pa-Kua na Arjentína.",
+          "translation": "🇦🇷 Español: Soy alumno de la escuela de Pa-Kua en Argentina.",
+          "audio": "assets/audio/pt/phrase_03.mp3",
+          "tts": {
+            "text": "Sou aluno da escola de Pa-Kua na Argentina.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "Soy alumno de la escuela de Pa-Kua en Argentina.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Sou%20aluno%20da%20escola%20de%20Pa-Kua%20na%20Argentina.&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "De qual recinto ou cidade você é?",
+          "phonetic": "🗣️ Dji cual resíntu óu sidádji vosé é?",
+          "translation": "🇦🇷 Español: ¿De qué recinto o ciudad sos?",
+          "audio": "assets/audio/pt/phrase_04.mp3",
+          "tts": {
+            "text": "De qual recinto ou cidade você é?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿De qué recinto o ciudad sos?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=De%20qual%20recinto%20ou%20cidade%20voc%C3%AA%20%C3%A9%3F&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Você fala espanhol? Meu português ainda é básico!",
+          "phonetic": "🗣️ Vosé fala espanhyól? Méo portugüés aínda é básico!",
+          "translation": "🇦🇷 Español: ¿Hablas español? ¡Mi portugués todavía es básico!",
+          "audio": "assets/audio/pt/phrase_05.mp3",
+          "tts": {
+            "text": "Você fala espanhol? Meu português ainda é básico!",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Hablas español? ¡Mi portugués todavía es básico!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20fala%20espanhol%3F%20Meu%20portugu%C3%AAs%20ainda%20%C3%A9%20b%C3%A1sico!&op=translate"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "⛩️ 2. Disciplinas y Práctica",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Eu pratico Cosmodinâmica, Arqueria e Arte Marcial.",
+          "phonetic": "🗣️ Éu pratíco Cosmodinámica, Arquería i Ártji Marsiál.",
+          "translation": "🇦🇷 Español: Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
+          "audio": "assets/audio/pt/phrase_01.mp3",
+          "tts": {
+            "text": "Eu pratico Cosmodinâmica, Arqueria e Arte Marcial.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "Practico Cosmodinámica, Arquería y Arte Marcial.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Eu%20pratico%20Cosmodin%C3%A2mica,%20Arqueria%20e%20Arte%20Marcial.&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Também gosto muito de Ritmo, Pa-Kua Chi e Massagem.",
+          "phonetic": "🗣️ Tambéing góstu múintu dji Rítmu, Pa-Kua Chi i Massájeing.",
+          "translation": "🇦🇷 Español: También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+          "audio": "assets/audio/pt/phrase_02.mp3",
+          "tts": {
+            "text": "Também gosto muito de Ritmo, Pa-Kua Chi e Massagem.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Tamb%C3%A9m%20gosto%20muito%20de%20Ritmo,%20Pa-Kua%20Chi%20e%20Massagem.&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Há quanto tempo você treina Pa-Kua?",
+          "phonetic": "🗣️ A cuántu témpu vosé tréina Pa-Kua?",
+          "translation": "🇦🇷 Español: ¿Hace cuánto tiempo entrenas Pa-Kua?",
+          "audio": "assets/audio/pt/phrase_03.mp3",
+          "tts": {
+            "text": "Há quanto tempo você treina Pa-Kua?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Hace cuánto tiempo entrenas Pa-Kua?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=H%C3%A1%20quanto%20tempo%20voc%C3%AA%20treina%20Pa-Kua%3F&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "Quais são os mestrados que você pratica há mais tempo em Pa-Kua?",
+          "phonetic": "🗣️ Cuáis sáo us mestrádus que vosé práctica á máis témpu eing Pa-Kua?",
+          "translation": "🇦🇷 Español: ¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
+          "audio": "assets/audio/pt/phrase_04.mp3",
+          "tts": {
+            "text": "Quais são os mestrados que você pratica há mais tempo em Pa-Kua?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Quais%20s%C3%A3o%20os%20mestrados%20que%20voc%C3%AA%20pratica%20h%C3%A1%20mais%20tempo%20em%20Pa-Kua%3F&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Bom treino! / Boa prática!",
+          "phonetic": "🗣️ Boing tréinu! / Bóa práctica!",
+          "translation": "🇦🇷 Español: ¡Buen entrenamiento! / ¡Buena práctica!",
+          "audio": "assets/audio/pt/phrase_05.mp3",
+          "tts": {
+            "text": "Bom treino! Boa prática!",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¡Buen entrenamiento! ¡Buena práctica!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Bom%20treino!%20Boa%20pr%C3%A1tica!&op=translate"
+        },
+        {
+          "id": 6,
+          "targetText": "Podemos treinar juntos no próximo bloco?",
+          "phonetic": "🗣️ Podémos treinár júntos no prócsimu blócu?",
+          "translation": "🇦🇷 Español: ¿Podemos entrenar juntos en el próximo bloque?",
+          "audio": "assets/audio/pt/phrase_06.mp3",
+          "tts": {
+            "text": "Podemos treinar juntos no próximo bloco?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Podemos entrenar juntos en el próximo bloque?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Podemos%20treinar%20juntos%20no%20pr%C3%B3ximo%20bloco%3F&op=translate"
+        },
+        {
+          "id": 7,
+          "targetText": "Gostei muito dessa técnica, pode me mostrar de novo?",
+          "phonetic": "🗣️ Gostéi múintu dessa téc-nica, póji mi mostrár dji nóvu?",
+          "translation": "🇦🇷 Español: Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
+          "audio": "assets/audio/pt/phrase_07.mp3",
+          "tts": {
+            "text": "Gostei muito dessa técnica, pode me mostrar de novo?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Gostei%20muito%20dessa%20t%C3%A9cnica,%20pode%20me%20mostrar%20de%20novo%3F&op=translate"
+        },
+        {
+          "id": 8,
+          "targetText": "Obrigado pelas dicas, ajudou muito!",
+          "phonetic": "🗣️ Obrigádu pélas djícas, ajudóu múintu!",
+          "translation": "🇦🇷 Español: ¡Gracias por los consejos, sirvió mucho!",
+          "audio": "assets/audio/pt/phrase_08.mp3",
+          "tts": {
+            "text": "Obrigado pelas dicas, ajudou muito!",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¡Gracias por los consejos, sirvió mucho!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Obrigado%20pelas%20dicas,%20ajudou%20muito!&op=translate"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "🤝 3. Socialización y Contacto",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Qual é o seu Instagram ou WhatsApp?",
+          "phonetic": "🗣️ Cual é o séu Instagram óu WhatsApp?",
+          "translation": "🇦🇷 Español: ¿Cuál es tu Instagram o WhatsApp?",
+          "audio": "assets/audio/pt/phrase_01.mp3",
+          "tts": {
+            "text": "Qual é o seu Instagram ou WhatsApp?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Cuál es tu Instagram o WhatsApp?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Qual%20%C3%A9%20o%20seu%20Instagram%20ou%20WhatsApp%3F&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Vamos tirar uma foto juntos?",
+          "phonetic": "🗣️ Vámos tirár úma fótu júntos?",
+          "translation": "🇦🇷 Español: ¿Sacamos una foto juntos?",
+          "audio": "assets/audio/pt/phrase_02.mp3",
+          "tts": {
+            "text": "Vamos tirar uma foto juntos?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Sacamos una foto juntos?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Vamos%20tirar%20uma%20foto%20juntos%3F&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Onde a galera vai se reunir mais tarde?",
+          "phonetic": "🗣️ Óndji a galéra vái si reunír máis tárdji?",
+          "translation": "🇦🇷 Español: ¿Dónde se junta el grupo más tarde?",
+          "audio": "assets/audio/pt/phrase_03.mp3",
+          "tts": {
+            "text": "Onde a galera vai se reunir mais tarde?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Dónde se junta el grupo más tarde?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Onde%20a%20galera%20vai%20se%20reunir%20mais%20tarde%3F&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "O evento está incrível, a energia está ótima!",
+          "phonetic": "🗣️ O evéntu está incrível, a enerjía está ótima!",
+          "translation": "🇦🇷 Español: El evento está increíble, ¡la energía está buenísima!",
+          "audio": "assets/audio/pt/phrase_04.mp3",
+          "tts": {
+            "text": "O evento está incrível, a energia está ótima!",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "El evento está increíble, ¡la energía está buenísima!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=O%20evento%20est%C3%A1%20incr%C3%ADvel,%20a%20energia%20est%C3%A1%20%C3%B3tima!&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Você vai participar do jantar de confraternização?",
+          "phonetic": "🗣️ Vosé vái partisipár do jantár dji confraternisasáong?",
+          "translation": "🇦🇷 Español: ¿Vas a participar de la cena de confraternización?",
+          "audio": "assets/audio/pt/phrase_05.mp3",
+          "tts": {
+            "text": "Você vai participar do jantar de confraternização?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Vas a participar de la cena de confraternización?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20vai%20participar%20do%20jantar%20de%20confraterniza%C3%A7%C3%A3o%3F&op=translate"
+        },
+        {
+          "id": 6,
+          "targetText": "Saúde! Um brinde a todos!",
+          "phonetic": "🗣️ Saúdji! Uing bríndji a tódos!",
+          "translation": "🇦🇷 Español: ¡Salud! ¡Un brindis por todos!",
+          "audio": "assets/audio/pt/phrase_06.mp3",
+          "tts": {
+            "text": "Saúde! Um brinde a todos!",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¡Salud! ¡Un brindis por todos!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Sa%C3%BAde!%20Um%20brinde%20a%20todos!&op=translate"
+        },
+        {
+          "id": 7,
+          "targetText": "Foi um prazer enorme treinar com você.",
+          "phonetic": "🗣️ Fói uing prasér enórmi treinár coing vosé.",
+          "translation": "🇦🇷 Español: Fue un placer enorme entrenar contigo.",
+          "audio": "assets/audio/pt/phrase_07.mp3",
+          "tts": {
+            "text": "Foi um prazer enorme treinar com você.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "Fue un placer enorme entrenar contigo.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Foi%20um%20prazer%20enorme%20treinar%20com%20voc%C3%AA.&op=translate"
+        },
+        {
+          "id": 8,
+          "targetText": "Até a próxima! Bom retorno pra casa.",
+          "phonetic": "🗣️ Até a prócsima! Boing retórnu pra cása.",
+          "translation": "🇦🇷 Español: ¡Hasta la próxima! Buen regreso a casa.",
+          "audio": "assets/audio/pt/phrase_08.mp3",
+          "tts": {
+            "text": "Até a próxima! Bom retorno pra casa.",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¡Hasta la próxima! Buen regreso a casa.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=At%C3%A9%20a%20pr%C3%B3xima!%20Bom%20retorno%20pra%20casa.&op=translate"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "🏨 4. Hotel, Instalaciones y Paseos",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Onde fica a piscina e a academia do hotel?",
+          "phonetic": "🗣️ Óndji fíca a pissína i a acadêmia do otél?",
+          "translation": "🇦🇷 Español: ¿Dónde queda la piscina y el gimnasio del hotel?",
+          "audio": "assets/audio/pt/phrase_01.mp3",
+          "tts": {
+            "text": "Onde fica a piscina e a academia do hotel?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Dónde queda la piscina y el gimnasio del hotel?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Onde%20fica%20a%20piscina%20e%20a%20academia%20do%20hotel%3F&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Qual é o horário do café da manhã e do jantar?",
+          "phonetic": "🗣️ Cual é o orário do café da manyá i do jantár?",
+          "translation": "🇦🇷 Español: ¿Cuál es el horario del desayuno y de la cena?",
+          "audio": "assets/audio/pt/phrase_02.mp3",
+          "tts": {
+            "text": "Qual é o horário do café da manhã e do jantar?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Cuál es el horario del desayuno y de la cena?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Qual%20%C3%A9%20o%20hor%C3%A1rio%20do%20caf%C3%A9%20da%20manh%C3%A3%20e%20do%20jantar%3F&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Onde fica o restaurante do hotel?",
+          "phonetic": "🗣️ Óndji fíca o restaurántji do otél?",
+          "translation": "🇦🇷 Español: ¿Dónde queda el comedor / restaurante del hotel?",
+          "audio": "assets/audio/pt/phrase_03.mp3",
+          "tts": {
+            "text": "Onde fica o restaurante do hotel?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Dónde queda el comedor o restaurante del hotel?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Onde%20fica%20o%20restaurante%20do%20hotel%3F&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "A que horas servem o lanche da tarde?",
+          "phonetic": "🗣️ A que óras sérveing o lánchi da tárdji?",
+          "translation": "🇦🇷 Español: ¿A qué hora sirven la merienda?",
+          "audio": "assets/audio/pt/phrase_04.mp3",
+          "tts": {
+            "text": "A que horas servem o lanche da tarde?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿A qué hora sirven la merienda?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=A%20que%20horas%20servem%20o%20lanche%20da%20tarde%3F&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Alguém quer ir à piscina para relaxar um pouco?",
+          "phonetic": "🗣️ Alguéing quer ír à pissína pra relaxár uing póuco?",
+          "translation": "🇦🇷 Español: ¿Alguien quiere ir a la piscina a relajarse un poco?",
+          "audio": "assets/audio/pt/phrase_05.mp3",
+          "tts": {
+            "text": "Alguém quer ir à piscina para relaxar um pouco?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Alguien quiere ir a la piscina a relajarse un poco?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Algu%C3%A9m%20quer%20ir%20%C3%A0%20piscina%20para%20relaxar%20um%20pouco%3F&op=translate"
+        },
+        {
+          "id": 6,
+          "targetText": "Você quer ir à academia treinar mais tarde?",
+          "phonetic": "🗣️ Vosé quer ír à acadêmia treinár máis tárdji?",
+          "translation": "🇦🇷 Español: ¿Quieres ir al gimnasio a entrenar más tarde?",
+          "audio": "assets/audio/pt/phrase_06.mp3",
+          "tts": {
+            "text": "Você quer ir à academia treinar mais tarde?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Querés ir al gimnasio a entrenar más tarde?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20quer%20ir%20%C3%A0%20academia%20treinar%20mais%20tarde%3F&op=translate"
+        },
+        {
+          "id": 7,
+          "targetText": "Vamos fazer um passeio pela cidade hoje?",
+          "phonetic": "🗣️ Vámos fasér uing passéio péla sidádji óji?",
+          "translation": "🇦🇷 Español: ¿Hacemos un paseo por la ciudad hoy?",
+          "audio": "assets/audio/pt/phrase_07.mp3",
+          "tts": {
+            "text": "Vamos fazer um passeio pela cidade hoje?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Hacemos un paseo por la ciudad hoy?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Vamos%20fazer%20um%20passeio%20pela%20cidade%20hoje%3F&op=translate"
+        },
+        {
+          "id": 8,
+          "targetText": "Você conhece algum lugar legal para passear perto daqui?",
+          "phonetic": "🗣️ Vosé conyési algúing lugár legál pra passeár pértu daquí?",
+          "translation": "🇦🇷 Español: ¿Conoces algún lugar lindo para pasear cerca de aquí?",
+          "audio": "assets/audio/pt/phrase_08.mp3",
+          "tts": {
+            "text": "Você conhece algum lugar legal para passear perto daqui?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Conocés algún lugar lindo para pasear cerca de aquí?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Voc%C3%AA%20conhece%20algum%20lugar%20legal%20para%20passear%20perto%20daqui%3F&op=translate"
+        },
+        {
+          "id": 9,
+          "targetText": "Qual é a senha do Wi-Fi do hotel?",
+          "phonetic": "🗣️ Cual é a sénia do Wi-Fi do otél?",
+          "translation": "🇦🇷 Español: ¿Cuál es la clave del Wi-Fi del hotel?",
+          "audio": "assets/audio/pt/phrase_09.mp3",
+          "tts": {
+            "text": "Qual é a senha do Wi-Fi do hotel?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Cuál es la clave del Wi-Fi del hotel?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Qual%20%C3%A9%20a%20senha%20do%20Wi-Fi%20do%20hotel%3F&op=translate"
+        },
+        {
+          "id": 10,
+          "targetText": "Onde posso pegar uma toalha para a piscina?",
+          "phonetic": "🗣️ Óndji póssu pegár úma toálha pra a pissína?",
+          "translation": "🇦🇷 Español: ¿Dónde puedo pedir una toalla para la piscina?",
+          "audio": "assets/audio/pt/phrase_10.mp3",
+          "tts": {
+            "text": "Onde posso pegar uma toalha para a piscina?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿Dónde puedo pedir una toalla para la piscina?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Onde%20posso%20pegar%20uma%20toalha%20para%20a%20piscina%3F&op=translate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "language": "de-DE",
+  "title": "Alemán",
+  "flag": "🇩🇪",
+  "sections": [
+    {
+      "id": 1,
+      "title": "👋 1. Presentación y Saludos",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Hallo! Wie geht es dir? Mein Name ist Alfredo.",
+          "phonetic": "🗣️ Jaló! Ví guet es dír? Máin Náme ist Alfrédo.",
+          "translation": "🇦🇷 Español: ¡Hola! ¿Cómo estás? Mi nombre es Alfredo.",
+          "audio": "assets/audio/de/phrase_01.mp3",
+          "tts": {
+            "text": "Hallo! Wie geht es dir? Mein Name ist Alfredo.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¡Hola! ¿Cómo estás? Mi nombre es Alfredo.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Hallo%21%20Wie%20geht%20es%20dir%3F%20Mein%20Name%20ist%20Alfredo.&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Schön, dich kennenzulernen!",
+          "phonetic": "🗣️ Shön, dij kénen-tsu-lérnen!",
+          "translation": "🇦🇷 Español: ¡Mucho gusto en conocerte!",
+          "audio": "assets/audio/de/phrase_02.mp3",
+          "tts": {
+            "text": "Schön, dich kennenzulernen!",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¡Mucho gusto en conocerte!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Sch%C3%B6n%2C%20dich%20kennenzulernen%21&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Ich bin Pa-Kua Schüler in Argentinien.",
+          "phonetic": "🗣️ Ij bin Pa-Kua Shúler in Arjentínien.",
+          "translation": "🇦🇷 Español: Soy alumno de la escuela de Pa-Kua en Argentina.",
+          "audio": "assets/audio/de/phrase_03.mp3",
+          "tts": {
+            "text": "Ich bin Pa-Kua Schüler in Argentinien.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "Soy alumno de la escuela de Pa-Kua en Argentina.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Ich%20bin%20Pa-Kua%20Sch%C3%BCler%20in%20Argentinien.&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "Aus welcher Schule oder Stadt kommst du?",
+          "phonetic": "🗣️ Áus véljer Shúle óder Shtat kómst du?",
+          "translation": "🇦🇷 Español: ¿De qué escuela o ciudad sos?",
+          "audio": "assets/audio/de/phrase_04.mp3",
+          "tts": {
+            "text": "Aus welcher Schule oder Stadt kommst du?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿De qué escuela o ciudad sos?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Aus%20welcher%20Schule%20oder%20Stadt%20kommst%20du%3F&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Sprichst du Spanisch? Ich habe Basis-Deutschkenntnisse.",
+          "phonetic": "🗣️ Shpríjst du Shpánish? Ij jábe Bázis-Dóich-kénntnise.",
+          "translation": "🇦🇷 Español: ¿Hablás español? ¡Tengo conocimientos básicos de alemán!",
+          "audio": "assets/audio/de/phrase_05.mp3",
+          "tts": {
+            "text": "Sprichst du Spanisch? Ich habe Basis-Deutschkenntnisse.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Hablás español? ¡Tengo conocimientos básicos de alemán!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Sprichst%20du%20Spanisch%3F%20Ich%20habe%20Basis-Deutschkenntnisse.&op=translate"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "⛩️ 2. Disciplinas y Práctica",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Ich übe Kosmo, Bogenschießen und Kampfkunst.",
+          "phonetic": "🗣️ Ij úbe Kósmo, Bóguen-shísen und Kámpf-kunst.",
+          "translation": "🇦🇷 Español: Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
+          "audio": "assets/audio/de/phrase_01.mp3",
+          "tts": {
+            "text": "Ich übe Kosmo, Bogenschießen und Kampfkunst.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "Practico Cosmodinámica (Tai-Chi), Arquería y Arte Marcial.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Ich%20%C3%BCbe%20Kosmo%2C%20Bogenschie%C3%9Fen%20und%20Kampfkunst.&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Ich mag auch sehr Rhythmus, Pa-Kua Chi und Massagen.",
+          "phonetic": "🗣️ Ij mag áuj zer Rútmus, Pa-Kua Chí und Maságuen.",
+          "translation": "🇦🇷 Español: También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+          "audio": "assets/audio/de/phrase_02.mp3",
+          "tts": {
+            "text": "Ich mag auch sehr Rhythmus, Pa-Kua Chi und Massagen.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "También me gusta mucho Ritmo, Pa-Kua Chi y Masajes.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Ich%20mag%20auch%20sehr%20Rhythmus%2C%20Pa-Kua%20Chi%20und%20Massagen.&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Wie lange trainierst du schon Pa-Kua?",
+          "phonetic": "🗣️ Ví lángue treinírst du shon Pa-Kua?",
+          "translation": "🇦🇷 Español: ¿Hace cuánto tiempo entrenás Pa-Kua?",
+          "audio": "assets/audio/de/phrase_03.mp3",
+          "tts": {
+            "text": "Wie lange trainierst du schon Pa-Kua?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Hace cuánto tiempo entrenás Pa-Kua?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Wie%20lange%20trainierst%20du%20schon%20Pa-Kua%3F&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "Welche Masterabschlüsse praktizieren Sie in Pa-Kua am längsten?",
+          "phonetic": "🗣️ Vél-je Más-ter-ab-shlüs-se prác-ti-tsi-ren sii in Pa-Kua am léng-sten?",
+          "translation": "🇦🇷 Español: ¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
+          "audio": "assets/audio/de/phrase_04.mp3",
+          "tts": {
+            "text": "Welche Masterabschlüsse praktizieren Sie in Pa-Kua am längsten?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Cuáles son las maestrías que llevas practicando más tiempo en Pa-Kua?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Welche%20Masterabschl%C3%BCsse%20praktizieren%20Sie%20in%20Pa-Kua%20am%20l%C3%A4ngsten%3F&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Hab ein gutes Training! / Gute Übung!",
+          "phonetic": "🗣️ Jab áin gútes Tréining! / Gúte Úbung!",
+          "translation": "🇦🇷 Español: ¡Buen entrenamiento! / ¡Buena práctica!",
+          "audio": "assets/audio/de/phrase_05.mp3",
+          "tts": {
+            "text": "Hab ein gutes Training! / Gute Übung!",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¡Buen entrenamiento! / ¡Buena práctica!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Hab%20ein%20gutes%20Training%21%20/%20Gute%20%C3%9Cbung%21&op=translate"
+        },
+        {
+          "id": 6,
+          "targetText": "Können wir im nächsten Block zusammen trainieren?",
+          "phonetic": "🗣️ Kónen vir im néjsten Blok tsu-zámen treiníren?",
+          "translation": "🇦🇷 Español: ¿Podemos entrenar juntos en el próximo bloque?",
+          "audio": "assets/audio/de/phrase_06.mp3",
+          "tts": {
+            "text": "Können wir im nächsten Block zusammen trainieren?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Podemos entrenar juntos en el próximo bloque?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=K%C3%B6nnen%20wir%20im%20n%C3%A4chsten%20Block%20zusammen%20trainieren%3F&op=translate"
+        },
+        {
+          "id": 7,
+          "targetText": "Mir hat diese Technik sehr gefallen, kannst du sie mir nochmal zeigen?",
+          "phonetic": "🗣️ Mir jat díze Téjnik zer guefálen, kanst du zi mir nójmal tsáiguen?",
+          "translation": "🇦🇷 Español: Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
+          "audio": "assets/audio/de/phrase_07.mp3",
+          "tts": {
+            "text": "Mir hat diese Technik sehr gefallen, kannst du sie mir nochmal zeigen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "Me gustó mucho esta técnica, ¿me la podés mostrar de nuevo?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Mir%20hat%20diese%20Technik%20sehr%20gefallen%2C%20kannst%20du%20sie%20mir%20nochmal%20zeigen%3F&op=translate"
+        },
+        {
+          "id": 8,
+          "targetText": "Danke für die Tipps, das war sehr hilfreich!",
+          "phonetic": "🗣️ Dánke fur di Típs, das var zer jílf-raij!",
+          "translation": "🇦🇷 Español: ¡Gracias por los consejos, fue muy útil!",
+          "audio": "assets/audio/de/phrase_08.mp3",
+          "tts": {
+            "text": "Danke für die Tipps, das war sehr hilfreich!",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¡Gracias por los consejos, fue muy útil!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Danke%20f%C3%BCr%20die%20Tipps%2C%20das%20war%20sehr%20hilfreich%21&op=translate"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "🤝 3. Socialización y Contacto",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Was ist dein Instagram oder WhatsApp?",
+          "phonetic": "🗣️ Vas ist dáin Ínstagram óder Uátsap?",
+          "translation": "🇦🇷 Español: ¿Cuál es tu Instagram o WhatsApp?",
+          "audio": "assets/audio/de/phrase_01.mp3",
+          "tts": {
+            "text": "Was ist dein Instagram oder WhatsApp?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Cuál es tu Instagram o WhatsApp?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Was%20ist%20dein%20Instagram%20oder%20WhatsApp%3F&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Sollen wir ein Foto zusammen machen?",
+          "phonetic": "🗣️ Zólen vir áin Fóto tsu-zámen májen?",
+          "translation": "🇦🇷 Español: ¿Hacemos una foto juntos?",
+          "audio": "assets/audio/de/phrase_02.mp3",
+          "tts": {
+            "text": "Sollen wir ein Foto zusammen machen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Hacemos una foto juntos?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Sollen%20wir%20ein%20Foto%20zusammen%20machen%3F&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Wo trifft sich die Gruppe später?",
+          "phonetic": "🗣️ Vo tríft zij di Grúpe shpéter?",
+          "translation": "🇦🇷 Español: ¿Dónde se junta el grupo más tarde?",
+          "audio": "assets/audio/de/phrase_03.mp3",
+          "tts": {
+            "text": "Wo trifft sich die Gruppe später?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Dónde se junta el grupo más tarde?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Wo%20trifft%20sich%20die%20Gruppe%20sp%C3%A4ter%3F&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "Die Veranstaltung ist großartig, die Energie ist fantastisch!",
+          "phonetic": "🗣️ Di Fer-ánshtaltung ist grós-artij, di Enerjí ist fantástish!",
+          "translation": "🇦🇷 Español: El evento es grandioso, ¡la energía es fantástica!",
+          "audio": "assets/audio/de/phrase_04.mp3",
+          "tts": {
+            "text": "Die Veranstaltung ist großartig, die Energie ist fantastisch!",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "El evento es grandioso, ¡la energía es fantástica!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Die%20Veranstaltung%20ist%20gro%C3%9Fartig%2C%20die%20Energie%20ist%20fantastisch%21&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Gehst du zum Gruppen-Dinner?",
+          "phonetic": "🗣️ Guést du tsum Grúpen-Díner?",
+          "translation": "🇦🇷 Español: ¿Vas a la cena del grupo?",
+          "audio": "assets/audio/de/phrase_05.mp3",
+          "tts": {
+            "text": "Gehst du zum Gruppen-Dinner?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Vas a la cena del grupo?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Gehst%20du%20zum%20Gruppen-Dinner%3F&op=translate"
+        },
+        {
+          "id": 6,
+          "targetText": "Prost! Ein Toast auf alle!",
+          "phonetic": "🗣️ Próst! Áin Tóust auf ále!",
+          "translation": "🇦🇷 Español: ¡Salud! ¡Un brindis por todos!",
+          "audio": "assets/audio/de/phrase_06.mp3",
+          "tts": {
+            "text": "Prost! Ein Toast auf alle!",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¡Salud! ¡Un brindis por todos!",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Prost%21%20Ein%20Toast%20auf%20alle%21&op=translate"
+        },
+        {
+          "id": 7,
+          "targetText": "Es war eine große Freude, mit dir zu üben.",
+          "phonetic": "🗣️ Es var áine gróse Fróide, mit dir tsu úben.",
+          "translation": "🇦🇷 Español: Fue un gran placer entrenar contigo.",
+          "audio": "assets/audio/de/phrase_07.mp3",
+          "tts": {
+            "text": "Es war eine große Freude, mit dir zu üben.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "Fue un gran placer entrenar contigo.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Es%20war%20eine%20gro%C3%9Fe%20Freude%2C%20mit%20dir%20zu%20%C3%BCben.&op=translate"
+        },
+        {
+          "id": 8,
+          "targetText": "Bis zum nächsten Mal! Gute Heimreise.",
+          "phonetic": "🗣️ Bis tsum néjsten Mal! Gúte Jáim-reise.",
+          "translation": "🇦🇷 Español: ¡Hasta la próxima! Buen regreso a casa.",
+          "audio": "assets/audio/de/phrase_08.mp3",
+          "tts": {
+            "text": "Bis zum nächsten Mal! Gute Heimreise.",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¡Hasta la próxima! Buen regreso a casa.",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Bis%20zum%20n%C3%A4chsten%20Mal%21%20Gute%20Heimreise.&op=translate"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "🏨 4. Hotel, Instalaciones y Paseos",
+      "phrases": [
+        {
+          "id": 1,
+          "targetText": "Wo befinden sich der Pool und das Fitnessstudio?",
+          "phonetic": "🗣️ Vo befínden zij der Pul und das Fítnes-shtudio?",
+          "translation": "🇦🇷 Español: ¿Dónde quedan la piscina y el gimnasio del hotel?",
+          "audio": "assets/audio/de/phrase_01.mp3",
+          "tts": {
+            "text": "Wo befinden sich der Pool und das Fitnessstudio?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Dónde quedan la piscina y el gimnasio del hotel?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Wo%20befinden%20sich%20der%20Pool%20und%20das%20Fitnessstudio%3F&op=translate"
+        },
+        {
+          "id": 2,
+          "targetText": "Um wie viel Uhr gibt es Frühstück und Abendessen?",
+          "phonetic": "🗣️ Um ví fil Ur guibt es Frú-shtuk und Ábend-esen?",
+          "translation": "🇦🇷 Español: ¿A qué hora hay desayuno y cena?",
+          "audio": "assets/audio/de/phrase_02.mp3",
+          "tts": {
+            "text": "Um wie viel Uhr gibt es Frühstück und Abendessen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿A qué hora hay desayuno y cena?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Um%20wie%20viel%20Uhr%20gibt%20es%20Fr%C3%BChst%C3%BCck%20und%20Abendessen%3F&op=translate"
+        },
+        {
+          "id": 3,
+          "targetText": "Wo ist das Hotelrestaurant?",
+          "phonetic": "🗣️ Vo ist das Jotél-restorán?",
+          "translation": "🇦🇷 Español: ¿Dónde está el restaurante del hotel?",
+          "audio": "assets/audio/de/phrase_03.mp3",
+          "tts": {
+            "text": "Wo ist das Hotelrestaurant?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Dónde está el restaurante del hotel?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Wo%20ist%20das%20Hotelrestaurant%3F&op=translate"
+        },
+        {
+          "id": 4,
+          "targetText": "Um wie viel Uhr gibt es die Nachmittagsjause?",
+          "phonetic": "🗣️ Um ví fil Ur guibt es di Náj-mitags-iáuze?",
+          "translation": "🇦🇷 Español: ¿A qué hora sirven la merienda?",
+          "audio": "assets/audio/de/phrase_04.mp3",
+          "tts": {
+            "text": "Um wie viel Uhr gibt es die Nachmittagsjause?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿A qué hora sirven la merienda?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Um%20wie%20viel%20Uhr%20gibt%20es%20die%20Nachmittagsjause%3F&op=translate"
+        },
+        {
+          "id": 5,
+          "targetText": "Möchte jemand zum Pool gehen, um sich zu entspannen?",
+          "phonetic": "🗣️ Mójte iémand tsum Pul guéen, um zij tsu ent-shpánen?",
+          "translation": "🇦🇷 Español: ¿Alguien quiere ir a la piscina a relajarse?",
+          "audio": "assets/audio/de/phrase_05.mp3",
+          "tts": {
+            "text": "Möchte jemand zum Pool gehen, um sich zu entspannen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Alguien quiere ir a la piscina a relajarse?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=M%C3%B6chte%20jemand%20zum%20Pool%20gehen%2C%20um%20sich%20zu%20entspannen%3F&op=translate"
+        },
+        {
+          "id": 6,
+          "targetText": "Möchtest du später ins Fitnessstudio gehen, um zu trainieren?",
+          "phonetic": "🗣️ Mójtest du shpéter ins Fítnes-shtudio guéen, um tsu treiníren?",
+          "translation": "🇦🇷 Español: ¿Querés ir más tarde al gimnasio a entrenar?",
+          "audio": "assets/audio/de/phrase_06.mp3",
+          "tts": {
+            "text": "Möchtest du später ins Fitnessstudio gehen, um zu trainieren?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Querés ir más tarde al gimnasio a entrenar?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=M%C3%B6chtest%20du%20sp%C3%A4ter%20ins%20Fitnessstudio%20gehen%2C%20um%20zu%20trainieren%3F&op=translate"
+        },
+        {
+          "id": 7,
+          "targetText": "Sollen wir heute einen Spaziergang durch die Stadt machen?",
+          "phonetic": "🗣️ Zólen vir jóite áinen Shpa-tsír-gang durj di Shtat májen?",
+          "translation": "🇦🇷 Español: ¿Hacemos un paseo por la ciudad hoy?",
+          "audio": "assets/audio/de/phrase_07.mp3",
+          "tts": {
+            "text": "Sollen wir heute einen Spaziergang durch die Stadt machen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Hacemos un paseo por la ciudad hoy?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Sollen%20wir%20heute%20einen%20Spaziergang%20durch%20die%20Stadt%20machen%3F&op=translate"
+        },
+        {
+          "id": 8,
+          "targetText": "Kennst du schöne Orte in der Nähe, die man besuchen kann?",
+          "phonetic": "🗣️ Kénst du shóne Órte in der Né-e, di man bezújen kan?",
+          "translation": "🇦🇷 Español: ¿Conocés lugares lindos cerca que se puedan visitar?",
+          "audio": "assets/audio/de/phrase_08.mp3",
+          "tts": {
+            "text": "Kennst du schöne Orte in der Nähe, die man besuchen kann?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Conocés lugares lindos cerca que se puedan visitar?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Kennst%20du%20sch%C3%B6ne%20Orte%20in%20der%20N%C3%A4he%2C%20die%20man%20besuchen%20kann%3F&op=translate"
+        },
+        {
+          "id": 9,
+          "targetText": "Was ist das WLAN-Passwort des Hotels?",
+          "phonetic": "🗣️ Vas ist das Ve-lan Pás-vort des Jotéls?",
+          "translation": "🇦🇷 Español: ¿Cuál es la clave del Wi-Fi del hotel?",
+          "audio": "assets/audio/de/phrase_09.mp3",
+          "tts": {
+            "text": "Was ist das WLAN-Passwort des Hotels?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Cuál es la clave del Wi-Fi del hotel?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Was%20ist%20das%20WLAN-Passwort%20des%20Hotels%3F&op=translate"
+        },
+        {
+          "id": 10,
+          "targetText": "Wo kann ich ein Handtuch für den Pool bekommen?",
+          "phonetic": "🗣️ Vo kan ij áin Jánd-tuj fur den Pul bekómen?",
+          "translation": "🇦🇷 Español: ¿Dónde puedo conseguir una toalla para la piscina?",
+          "audio": "assets/audio/de/phrase_10.mp3",
+          "tts": {
+            "text": "Wo kann ich ein Handtuch für den Pool bekommen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿Dónde puedo conseguir una toalla para la piscina?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Wo%20kann%20ich%20ein%20Handtuch%20f%C3%BCr%20den%20Pool%20bekommen%3F&op=translate"
+        }
+      ]
+    }
+  ]
+}

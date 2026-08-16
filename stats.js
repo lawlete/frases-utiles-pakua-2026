@@ -304,55 +304,7 @@ const PakuaStats = (function () {
     // -------------------------------------------------------------
 
     function openAdminPrompt() {
-        let modal = document.getElementById('pakua-admin-auth-modal');
-        if (modal) modal.remove();
-
-        modal = document.createElement('div');
-        modal.id = 'pakua-admin-auth-modal';
-        modal.style.cssText = `
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px);
-            z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 16px;
-        `;
-
-        modal.innerHTML = `
-            <div style="background: #ffffff; border-radius: 16px; max-width: 400px; width: 100%; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                <div style="font-size: 3rem; margin-bottom: 8px;">🔐</div>
-                <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Panel de Estadísticas Pa-Kua</h3>
-                <p style="font-size: 0.92rem; color: #64748b; margin-bottom: 20px;">Ingresa la contraseña de superadministrador para acceder.</p>
-                <input type="password" id="pakua-pass-input" placeholder="Contraseña..." style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 10px; border: 2px solid #cbd5e1; outline: none; margin-bottom: 16px; text-align: center;">
-                <div id="pakua-auth-error" style="color: #ef4444; font-size: 0.85rem; display: none; margin-bottom: 12px; font-weight: 600;">⚠️ Contraseña incorrecta. Reintenta.</div>
-                <div style="display: flex; gap: 10px;">
-                    <button onclick="document.getElementById('pakua-admin-auth-modal').remove()" style="flex: 1; padding: 12px; border-radius: 10px; background: #f1f5f9; color: #475569; font-weight: 600; border: none; cursor: pointer;">Cancelar</button>
-                    <button id="pakua-btn-submit-pass" style="flex: 1; padding: 12px; border-radius: 10px; background: #1e3a8a; color: white; font-weight: 700; border: none; cursor: pointer;">Ingresar ➔</button>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(modal);
-
-        const passInput = document.getElementById('pakua-pass-input');
-        const btnSubmit = document.getElementById('pakua-btn-submit-pass');
-        const authError = document.getElementById('pakua-auth-error');
-
-        passInput.focus();
-
-        const verify = async () => {
-            const enteredHash = await hashText(passInput.value || '');
-            if (enteredHash === CONFIG.adminPassHash) {
-                modal.remove();
-                showDashboardModal();
-            } else {
-                authError.style.display = 'block';
-                passInput.value = '';
-                passInput.focus();
-            }
-        };
-
-        btnSubmit.addEventListener('click', verify);
-        passInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') verify();
-        });
+        showDashboardModal();
     }
 
     // Cargar Chart.js dinámicamente si no está presente
