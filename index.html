@@ -920,5 +920,27 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const flagMap = {
+                '🇧🇷': 'https://flagcdn.com/w40/br.png',
+                '🇺🇸': 'https://flagcdn.com/w40/us.png',
+                '🇩🇪': 'https://flagcdn.com/w40/de.png',
+                '🇦🇷': 'https://flagcdn.com/w40/ar.png'
+            };
+            document.querySelectorAll('.card-title, .section-title, .badge, .modal-title, p').forEach(el => {
+                let html = el.innerHTML;
+                for (const [emoji, url] of Object.entries(flagMap)) {
+                    if (html.includes(emoji)) {
+                        const img = `<img src="${url}" alt="${emoji}" style="height: 1.1em; width: auto; vertical-align: -0.15em; border-radius: 2px; display: inline-block; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">`;
+                        html = html.replaceAll(emoji, img);
+                    }
+                }
+                el.innerHTML = html;
+            });
+        });
+    </script>
+
 </body>
 </html>

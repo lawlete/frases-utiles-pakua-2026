@@ -1,4 +1,30 @@
 /**
+ * ============================================================================
+ * PROYECTO: Encuentro Mundial Pa-Kua 2026 (50.º Aniversario) - San Pedro, Arg.
+ * MÓDULO:   Módulo de Estadísticas Silenciosas y Dashboard (stats.js)
+ * AUTOR:    Alfredo (Escuela Pakua Lincoln) & VAE AI Consulting
+ * ============================================================================
+ * 
+ * DESCRIPCIÓN:
+ * Este módulo gestiona el registro anónimo de métricas de uso y la visualización
+ * del dashboard de administración/estadísticas del sitio. Se encarga de:
+ * 
+ * 1. Tracking Local-First (LocalStorage):
+ *    Registra visitas, tiempo de uso, idioma, reproducciones de audio e
+ *    interacciones de usuario localmente sin bloquear la interfaz.
+ * 
+ * 2. Sincronización Remota (JSONBin.io REST API):
+ *    Consolida de forma transparente en segundo plano los datos globales de
+ *    todos los participantes del encuentro.
+ * 
+ * 3. Dashboard Visual e Indicadores en Tiempo Real:
+ *    Muestra gráficos (Chart.js) de países de origen, módulos de idioma,
+ *    franjas horarias, tipos de interacción y distribución de dispositivos (Android/iOS/PC).
+ *    Acceso abierto para consulta de participantes e instructores.
+ * ============================================================================
+ */
+
+/**
  * Pakua 2026 - Módulo de Estadísticas Silenciosas de Uso
  * Sistema híbrido: LocalStorage + JSONBin.io (Tiempo Real)
  */
