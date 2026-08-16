@@ -414,11 +414,11 @@
                     ➕ Agregar Frase / Adicionar Frase / Add Phrase / Satz Hinzufügen
                 </button>
                 <button id="btn-ver-sugerencias" class="btn-sug btn-view">
-                    📋 Ver Frases Sugeridas
+                    📋 Ver Frases Sugeridas (Admin)
                     <span id="sug-badge" style="display: none; background: #ef4444; color: #ffffff; border-radius: 20px; padding: 2px 8px; font-size: 0.78rem; font-weight: 800; margin-left: 6px; box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4); border: 1px solid #ffffff;">0</span>
                 </button>
                 <button id="btn-blanquear-sugerencias" class="btn-sug btn-clear" title="Uso exclusivo Administrador">
-                    🗑️ Blanquear Frases
+                    🗑️ Blanquear Frases (Admin)
                 </button>
             </div>
 
@@ -724,34 +724,199 @@
                 }
             });
 
-            // b) VER FRASES SUGERIDAS (ACCESO DIRECTO)
+            // b) VER FRASES SUGERIDAS (RESTRINGIDO CON CLAVE DE ADMIN)
             btnView.addEventListener('click', async () => {
                 if (isListVisible) {
                     listContainer.style.display = 'none';
                     isListVisible = false;
                 } else {
-                    listContainer.style.display = 'block';
-                    isListVisible = true;
-                    listBody.innerHTML = '<div style="color: #64748b; font-size: 0.9rem; text-align: center; padding: 16px;">⏳ Cargando sugerencias desde la nube...</div>';
-                    const list = await checkAndUpdateBadge();
-                    renderSugerenciasList(list);
+                    // Modal de contraseña para visualizar las frases sugeridas
+                    let modal = document.getElementById('pakua-view-sug-modal');
+                    if (modal) modal.remove();
+
+                    modal = document.createElement('div');
+                    modal.id = 'pakua-view-sug-modal';
+                    modal.style.cssText = `
+                        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                        background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px);
+                        z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 16px;
+                    `;
+
+                    modal.innerHTML = `
+                        <div style="background: #ffffff; border-radius: 16px; max-width: 420px; width: 100%; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                            <div style="font-size: 3rem; margin-bottom: 8px;">🔑</div>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: #1e3a8a; margin-bottom: 8px;">Ver Frases Sugeridas</h3>
+                            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px; line-height: 1.4;">
+                                El acceso a las sugerencias está reservado para la administración.<br>
+                                Ingresa la clave de administrador (<strong>"confirmar"</strong>) para ver las frases:
+                            </p>
+                            <input type="password" id="pakua-view-sug-pass" placeholder="Escribe la clave..." style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 10px; border: 2px solid #cbd5e1; outline: none; margin-bottom: 16px; text-align: center;">
+                            <div id="pakua-view-sug-error" style="color: #ef4444; font-size: 0.85rem; display: none; margin-bottom: 12px; font-weight: 600;">⚠️ Clave incorrecta. Acceso denegado.</div>
+                            <div style="display: flex; gap: 10px;">
+                                <button id="pakua-btn-cancel-view-sug" style="flex: 1; padding: 12px; border-radius: 10px; background: #f1f5f9; color: #475569; font-weight: 600; border: none; cursor: pointer;">Cancelar</button>
+                                <button id="pakua-btn-confirm-view-sug" style="flex: 1; padding: 12px; border-radius: 10px; background: #1e3a8a; color: white; font-weight: 700; border: none; cursor: pointer;">Ingresar ➔</button>
+                            </div>
+                        </div>
+                    `;
+
+                    document.body.appendChild(modal);
+
+                    const passInput = document.getElementById('pakua-view-sug-pass');
+                    const btnConfirm = document.getElementById('pakua-btn-confirm-view-sug');
+                    const btnCancel = document.getElementById('pakua-btn-cancel-view-sug');
+                    const authError = document.getElementById('pakua-view-sug-error');
+
+                    passInput.focus();
+
+                    btnCancel.onclick = () => {
+                        modal.remove();
+                    };
+
+                    const executeView = async () => {
+                        const hashOfConfirm = '2828ec2c3aeaa5becf212f58be99c958a662147a2df77442d2c798334421d2a0';
+                        const enteredHash = await hashSugerenciasKey(passInput.value || '');
+                        if (enteredHash === hashOfConfirm) {
+                            modal.remove();
+                            listContainer.style.display = 'block';
+                            isListVisible = true;
+                            listBody.innerHTML = '<div style="color: #64748b; font-size: 0.9rem; text-align: center; padding: 16px;">⏳ Cargando sugerencias desde la nube...</div>';
+                            const list = await checkAndUpdateBadge();
+                            renderSugerenciasList(list);
+                        } else {
+                            authError.style.display = 'block';
+                            setTimeout(() => {
+                                modal.remove();
+                                alert('Clave incorrecta. Acceso denegado.');
+                            }, 1000);
+                        }
+                    };
+
+                    btnConfirm.addEventListener('click', executeView);
+                    passInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') executeView();
+                    });
                 }
             });
 
-            // c) BLANQUEAR FRASES (ACCESO DIRECTO)
+            function renderSugerenciasList(list) {
+                if (!list || list.length === 0) {
+                    listBody.innerHTML = '<div style="color: #64748b; font-size: 0.9rem; text-align: center; padding: 16px;">No hay frases sugeridas acumuladas aún.</div>';
+                    return;
+                }
+
+                listBody.innerHTML = list.map((item, idx) => {
+                    const dateStr = item.fecha ? new Date(item.fecha).toLocaleString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+                    
+                    const origLang = item.originalLang || 'es';
+                    const origMeta = LANG_META[origLang] || LANG_META.es;
+                    const origText = item.originalText || item.frase || (item.translations ? item.translations[origLang] : '-') || '-';
+
+                    const otherLangs = ['es', 'pt', 'en', 'de'].filter(l => l !== origLang);
+
+                    const otherLines = otherLangs.map(lang => {
+                        const meta = LANG_META[lang];
+                        const textVal = (item.translations && item.translations[lang]) ? item.translations[lang] : (item[lang] || '-');
+                        return `<div style="color: #334155; font-size: 0.9rem; margin-top: 4px;">${meta.flag} <strong>${meta.name}:</strong> ${escapeHtml(textVal)}</div>`;
+                    }).join('');
+
+                    return `
+                        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.04); margin-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #f1f5f9; padding-bottom: 6px;">
+                                <span style="font-weight: 700; color: #1e3a8a; font-size: 0.85rem;">💡 Propuesta #${list.length - idx}</span>
+                                <span style="font-size: 0.76rem; color: #64748b;">📅 ${dateStr}</span>
+                            </div>
+
+                            <!-- IDIOMA ORIGINAL (LÍNEA PRINCIPAL) -->
+                            <div style="font-size: 0.98rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; background: #f8fafc; padding: 8px 10px; border-radius: 8px; border-left: 4px solid #2563eb;">
+                                ${origMeta.flag} <strong>Original (${origMeta.name}):</strong> ${escapeHtml(origText)}
+                            </div>
+
+                            <!-- LOS OTROS 3 IDIOMAS ABAJO -->
+                            <div style="padding-left: 6px;">
+                                <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Traducciones a los otros 3 idiomas:</div>
+                                ${otherLines}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            function escapeHtml(str) {
+                return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+            }
+
+            // c) BLANQUEAR FRASES (ADMIN)
             btnClear.addEventListener('click', async () => {
-                if (confirm('¿Deseas blanquear todas las sugerencias de frases enviadas por los usuarios?')) {
-                    const success = await saveSugerencias([]);
-                    if (success) {
-                        alert('Lista de sugerencias blanqueada correctamente.');
-                        checkAndUpdateBadge();
-                        if (isListVisible) {
-                            renderSugerenciasList([]);
+                let modal = document.getElementById('pakua-clear-sug-modal');
+                if (modal) modal.remove();
+
+                modal = document.createElement('div');
+                modal.id = 'pakua-clear-sug-modal';
+                modal.style.cssText = `
+                    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                    background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px);
+                    z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 16px;
+                `;
+
+                modal.innerHTML = `
+                    <div style="background: #ffffff; border-radius: 16px; max-width: 420px; width: 100%; padding: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                        <div style="font-size: 3rem; margin-bottom: 8px;">🔐</div>
+                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #dc2626; margin-bottom: 8px;">Blanquear Sugerencias</h3>
+                        <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px; line-height: 1.4;">
+                            Esta acción eliminará todas las sugerencias de frases enviadas por los usuarios.<br>
+                            Ingresa la clave de administrador (<strong>"confirmar"</strong>) para proceder:
+                        </p>
+                        <input type="password" id="pakua-clear-sug-pass" placeholder="Escribe la clave..." style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 10px; border: 2px solid #cbd5e1; outline: none; margin-bottom: 16px; text-align: center;">
+                        <div id="pakua-clear-sug-error" style="color: #ef4444; font-size: 0.85rem; display: none; margin-bottom: 12px; font-weight: 600;">⚠️ Clave incorrecta. Acción rechazada.</div>
+                        <div style="display: flex; gap: 10px;">
+                            <button id="pakua-btn-cancel-sug" style="flex: 1; padding: 12px; border-radius: 10px; background: #f1f5f9; color: #475569; font-weight: 600; border: none; cursor: pointer;">Cancelar</button>
+                            <button id="pakua-btn-confirm-sug" style="flex: 1; padding: 12px; border-radius: 10px; background: #dc2626; color: white; font-weight: 700; border: none; cursor: pointer;">Blanquear ➔</button>
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+
+                const passInput = document.getElementById('pakua-clear-sug-pass');
+                const btnConfirm = document.getElementById('pakua-btn-confirm-sug');
+                const btnCancel = document.getElementById('pakua-btn-cancel-sug');
+                const authError = document.getElementById('pakua-clear-sug-error');
+
+                passInput.focus();
+
+                btnCancel.onclick = () => {
+                    modal.remove();
+                    alert('Acción cancelada.');
+                };
+
+                const executeClear = async () => {
+                    const hashOfConfirm = '2828ec2c3aeaa5becf212f58be99c958a662147a2df77442d2c798334421d2a0';
+                    const enteredHash = await hashSugerenciasKey(passInput.value || '');
+                    if (enteredHash === hashOfConfirm) {
+                        modal.remove();
+                        const success = await saveSugerencias([]);
+                        if (success) {
+                            alert('Lista de sugerencias blanqueada correctamente.');
+                            checkAndUpdateBadge();
+                            if (isListVisible) {
+                                renderSugerenciasList([]);
+                            }
+                        } else {
+                            alert('No se pudo blanquear la lista en JSONBin.io.');
                         }
                     } else {
-                        alert('No se pudo blanquear la lista en JSONBin.io.');
+                        authError.style.display = 'block';
+                        setTimeout(() => {
+                            modal.remove();
+                            alert('Clave incorrecta. Acción cancelada.');
+                        }, 1000);
                     }
-                }
+                };
+
+                btnConfirm.addEventListener('click', executeClear);
+                passInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') executeClear();
+                });
             });
         });
     </script>
