@@ -220,6 +220,22 @@
             "lang": "es-AR"
           },
           "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=Danke%20f%C3%BCr%20die%20Tipps%2C%20das%20war%20sehr%20hilfreich%21&op=translate"
+        },
+        {
+          "id": 32,
+          "targetText": "An wie vielen offenen Kursen hast du teilgenommen?",
+          "phonetic": "🗣️ An ví ví-len óf-fe-nen Kúr-zen jast du táil-ge-no-men?",
+          "translation": "🇦🇷 Español: ¿A cuántas aulas abiertas asististe?",
+          "audio": "assets/audio/de/phrase_32.mp3",
+          "tts": {
+            "text": "An wie vielen offenen Kursen hast du teilgenommen?",
+            "lang": "de-DE"
+          },
+          "ttsEs": {
+            "text": "¿A cuántas aulas abiertas asististe?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=de&tl=es&text=An%20wie%20vielen%20offenen%20Kursen%20hast%20du%20teilgenommen%3F&op=translate"
         }
       ]
     },

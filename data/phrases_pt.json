@@ -220,6 +220,22 @@
             "lang": "es-AR"
           },
           "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=Obrigado%20pelas%20dicas,%20ajudou%20muito!&op=translate"
+        },
+        {
+          "id": 32,
+          "targetText": "A quantas aulas abertas você assistiu?",
+          "phonetic": "🗣️ A cuántas áulas abértas vosé assistíu?",
+          "translation": "🇦🇷 Español: ¿A cuántas aulas abiertas asististe?",
+          "audio": "assets/audio/pt/phrase_32.mp3",
+          "tts": {
+            "text": "A quantas aulas abertas você assistiu?",
+            "lang": "pt-BR"
+          },
+          "ttsEs": {
+            "text": "¿A cuántas aulas abiertas asististe?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=pt&tl=es&text=A%20quantas%20aulas%20abertas%20voc%C3%AA%20assistiu%3F&op=translate"
         }
       ]
     },

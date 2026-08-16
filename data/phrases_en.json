@@ -220,6 +220,22 @@
             "lang": "es-AR"
           },
           "googleTranslateUrl": "https://translate.google.com/?sl=en&tl=es&text=Thank%20you%20for%20the%20tips,%20that%20was%20very%20helpful!&op=translate"
+        },
+        {
+          "id": 32,
+          "targetText": "How many open classes did you attend?",
+          "phonetic": "🗣️ Jáu méni óupen cláses did iú aténd?",
+          "translation": "🇦🇷 Español: ¿A cuántas aulas abiertas asististe?",
+          "audio": "assets/audio/en/phrase_32.mp3",
+          "tts": {
+            "text": "How many open classes did you attend?",
+            "lang": "en-US"
+          },
+          "ttsEs": {
+            "text": "¿A cuántas aulas abiertas asististe?",
+            "lang": "es-AR"
+          },
+          "googleTranslateUrl": "https://translate.google.com/?sl=en&tl=es&text=How%20many%20open%20classes%20did%20you%20attend%3F&op=translate"
         }
       ]
     },

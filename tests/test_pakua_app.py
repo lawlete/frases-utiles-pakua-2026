@@ -35,7 +35,7 @@ def test_phrase_count_and_section_structure(json_filename, expected_lang, expect
         data = json.load(f)
         
     total_phrases = sum(len(sec["phrases"]) for sec in data["sections"])
-    assert total_phrases == 31, f"Se esperaban 31 frases en {json_filename}, pero hay {total_phrases}"
+    assert total_phrases == 32, f"Se esperaban 32 frases en {json_filename}, pero hay {total_phrases}"
 
 @pytest.mark.parametrize("json_filename, expected_lang, expected_title, expected_flag, lang_code", LANGUAGES)
 def test_phrase_object_schema_and_fields(json_filename, expected_lang, expected_title, expected_flag, lang_code):

@@ -8,14 +8,14 @@ Aplicación web interactiva y ligera, optimizada para smartphones, diseñada par
 **Arquitectura de Archivos**
 
 * **`index.html`**: Portal de bienvenida / menú principal para selección de idioma.
-* **`portugues.html`**: Guía interactiva de 31 frases esenciales en portugués de Brasil.
-* **`ingles.html`**: Guía interactiva de 31 frases esenciales en inglés (`en-US`).
+* **`portugues.html`**: Guía interactiva de 32 frases esenciales en portugués de Brasil.
+* **`ingles.html`**: Guía interactiva de 32 frases esenciales en inglés (`en-US`).
 
 ---
 
 **Funcionalidades y Características Actuales**
 
-* **Contenido de las guías (31 frases por idioma):**
+* **Contenido de las guías (32 frases por idioma):**
 1. Presentación y Saludos.
 2. Disciplinas y Práctica (Arte Marcial, Cosmodinámica/Tai-Chi, Arquería, Ritmo, Pa-Kua Chi, Masajes).
 3. Socialización y Contacto.
