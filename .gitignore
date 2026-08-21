@@ -1,0 +1,5 @@
+# Ignorar carpeta Cinturones
+Cinturones/
+
+# Caches y temporales
+.pytest_cache/
