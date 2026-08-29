@@ -1,4 +1,4 @@
-{
+window.PAKUA_PHRASES_PT = {
   "language": "pt-BR",
   "title": "Portugués",
   "flag": "🇧🇷",
@@ -700,4 +700,4 @@
       ]
     }
   ]
-}
+};

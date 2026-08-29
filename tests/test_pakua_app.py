@@ -29,13 +29,13 @@ def test_json_data_files_integrity(json_filename, expected_lang, expected_title,
 
 @pytest.mark.parametrize("json_filename, expected_lang, expected_title, expected_flag, lang_code", LANGUAGES)
 def test_phrase_count_and_section_structure(json_filename, expected_lang, expected_title, expected_flag, lang_code):
-    """Verifica que cada idioma contenga exactamente 31 frases en 4 secciones."""
+    """Verifica que cada idioma contenga exactamente 42 frases en 4 secciones."""
     file_path = os.path.join(DATA_DIR, json_filename)
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
         
     total_phrases = sum(len(sec["phrases"]) for sec in data["sections"])
-    assert total_phrases == 32, f"Se esperaban 32 frases en {json_filename}, pero hay {total_phrases}"
+    assert total_phrases == 42, f"Se esperaban 42 frases en {json_filename}, pero hay {total_phrases}"
 
 @pytest.mark.parametrize("json_filename, expected_lang, expected_title, expected_flag, lang_code", LANGUAGES)
 def test_phrase_object_schema_and_fields(json_filename, expected_lang, expected_title, expected_flag, lang_code):

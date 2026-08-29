@@ -98,11 +98,23 @@
         }
     };
 
-    // Inicialización y carga dinámica del archivo JSON del idioma
-    window.initPhrasesApp = function (jsonFile) {
+    // Inicialización y carga dinámica del archivo JSON/JS del idioma
+    window.initPhrasesApp = function (jsonFile, fallbackData) {
         const container = document.getElementById('phrases-container');
         if (!container) return;
 
+        // 1. Detección de datos precargados para soporte 100% offline / protocolo local file://
+        const localData = fallbackData ||
+                          (jsonFile && jsonFile.includes('_de') && window.PAKUA_PHRASES_DE) ||
+                          (jsonFile && jsonFile.includes('_en') && window.PAKUA_PHRASES_EN) ||
+                          (jsonFile && jsonFile.includes('_pt') && window.PAKUA_PHRASES_PT) || null;
+
+        if (localData) {
+            renderPhrases(localData, container);
+            return;
+        }
+
+        // 2. Carga asíncrona estándar mediante Fetch para servidor HTTP/HTTPS
         fetch(jsonFile)
             .then(response => {
                 if (!response.ok) throw new Error('Error al cargar ' + jsonFile);
