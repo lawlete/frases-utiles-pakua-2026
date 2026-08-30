@@ -80,7 +80,7 @@ def test_stats_pass_removed():
     assert 'function openAdminPrompt() {\n        showDashboardModal();\n    }' in content
 
 def test_js_app_engine_exists_and_documented():
-    """Verifica la existencia y encabezado documental de js/app.js."""
+    """Verifica la existencia, funciones y encabezado documental de js/app.js."""
     app_js_path = os.path.join(JS_DIR, 'app.js')
     assert os.path.exists(app_js_path)
     with open(app_js_path, 'r', encoding='utf-8') as f:
@@ -90,3 +90,26 @@ def test_js_app_engine_exists_and_documented():
     assert 'window.parseFlag' in content
     assert 'window.playAudio' in content
     assert 'window.speak' in content
+    assert 'window.toggleTheme' in content
+    assert 'window.toggleAudioSpeed' in content
+    assert 'window.copyPhrase' in content
+    assert 'window.handleSearchInput' in content
+    assert 'window.selectCategory' in content
+
+def test_pwa_manifest_and_sw():
+    """Verifica la existencia y validez del manifest PWA y del Service Worker."""
+    manifest_path = os.path.join(BASE_DIR, 'manifest.json')
+    assert os.path.exists(manifest_path), "Falta manifest.json"
+    with open(manifest_path, 'r', encoding='utf-8') as f:
+        manifest = json.load(f)
+    assert manifest["name"] == "Frases Útiles Pa-Kua 2026"
+    assert manifest["display"] == "standalone"
+    assert len(manifest["icons"]) > 0
+
+    sw_path = os.path.join(BASE_DIR, 'sw.js')
+    assert os.path.exists(sw_path), "Falta sw.js"
+    with open(sw_path, 'r', encoding='utf-8') as f:
+        sw_content = f.read()
+    assert "CACHE_NAME" in sw_content
+    assert "ASSETS_TO_CACHE" in sw_content
+

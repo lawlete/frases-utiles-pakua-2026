@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="manifest" href="manifest.json">
     <title>Guías de Idiomas - Frases Utiles</title>
     <style>
         :root {
@@ -16,6 +18,50 @@
             --card-bg: #ffffff;
             --text-dark: #0f172a;
             --text-muted: #475569;
+        }
+
+        body.dark-mode {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            background-color: var(--bg);
+            color: var(--text-dark);
+        }
+
+        body.dark-mode::before {
+            opacity: 0.10;
+            filter: invert(1);
+        }
+
+        body.dark-mode .welcome-box,
+        body.dark-mode .lang-card,
+        body.dark-mode .suggestions-box,
+        body.dark-mode .modal-content {
+            background-color: var(--card-bg);
+            border-color: #334155;
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .lang-card:hover {
+            border-color: #475569;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+        }
+
+        body.dark-mode .card-desc,
+        body.dark-mode .suggestions-desc {
+            color: var(--text-muted);
+        }
+
+        body.dark-mode #sugerencia-input {
+            background-color: #0f172a;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        body.dark-mode footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
         }
 
         * {
@@ -328,6 +374,10 @@
 <body>
 
     <header>
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+            <button class="btn-sug" style="background: rgba(255,255,255,0.22); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; cursor: pointer; font-weight: 700;" onclick="openPwaInstallModal()">📲 Instalar App</button>
+            <button id="btn-theme-index" class="btn-sug" style="background: rgba(255,255,255,0.22); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; cursor: pointer; font-weight: 700;" onclick="toggleIndexTheme()">🌙 Modo Oscuro</button>
+        </div>
         <img src="logo 50 aniversario Pakua.jpeg" alt="Logo 50 Aniversario Pa-Kua" class="header-logo">
         <h1>☯️ Guías de Idiomas </h1>
         <p>Congreso Internacional, Diciembre, ciudad de San Pedro, Buenos Aires, Argentina</p>
@@ -941,6 +991,109 @@
             });
         });
     </script>
+    <script>
+        
+        let indexDeferredPrompt = null;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            indexDeferredPrompt = e;
+        });
 
+        function openPwaInstallModal() {
+            if (indexDeferredPrompt) {
+                indexDeferredPrompt.prompt();
+                indexDeferredPrompt = null;
+                return;
+            }
+            let modal = document.getElementById('pwa-modal');
+            if (modal) modal.remove();
+            modal = document.createElement('div');
+            modal.id = 'pwa-modal';
+            modal.style.position = 'fixed';
+            modal.style.inset = '0';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.65)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = '10000';
+            modal.style.padding = '16px';
+            modal.style.backdropFilter = 'blur(4px)';
+
+            const isDark = document.body.classList.contains('dark-mode');
+            const bg = isDark ? '#1e293b' : '#ffffff';
+            const text = isDark ? '#f8fafc' : '#0f172a';
+            const textMuted = isDark ? '#94a3b8' : '#475569';
+            const cardBorder = isDark ? '#334155' : '#e2e8f0';
+
+            modal.innerHTML = `
+                <div style="background: ${bg}; color: ${text}; border-radius: 16px; max-width: 480px; width: 100%; padding: 24px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 1px solid ${cardBorder};">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                        <div style="font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                            📲 <span>Instalar App en tu Celular o PC</span>
+                        </div>
+                        <button onclick="document.getElementById('pwa-modal').remove()" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: ${textMuted}; padding: 4px;">✕</button>
+                    </div>
+                    <p style="font-size: 0.95rem; color: ${textMuted}; margin-bottom: 16px; line-height: 1.5;">
+                        Para tener la app de frases siempre a mano en tu pantalla de inicio y usarla <strong>100% offline</strong> durante el evento:
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; line-height: 1.5;">
+                        <div style="background: ${isDark ? '#0f172a' : '#f1f5f9'}; padding: 12px 14px; border-radius: 10px; border-left: 4px solid #2563eb;">
+                            <strong>🍏 iPhone / iPad (Safari):</strong><br>
+                            1. Toca el botón <strong>Compartir</strong> (icono ⎋ abajo en Safari).<br>
+                            2. Elige <strong>"Agregar a Inicio"</strong> o <strong>"Añadir a pantalla de inicio (+)"</strong>.
+                        </div>
+                        <div style="background: ${isDark ? '#0f172a' : '#f1f5f9'}; padding: 12px 14px; border-radius: 10px; border-left: 4px solid #059669;">
+                            <strong>🤖 Android (Chrome / Edge / Samsung):</strong><br>
+                            1. Toca los <strong>tres puntos (⋮)</strong> arriba a la derecha.<br>
+                            2. Selecciona <strong>"Instalar aplicación"</strong> o <strong>"Agregar a la pantalla principal"</strong>.
+                        </div>
+                        <div style="background: ${isDark ? '#0f172a' : '#f1f5f9'}; padding: 12px 14px; border-radius: 10px; border-left: 4px solid #991b1b;">
+                            <strong>💻 Computadora (Chrome / Edge):</strong><br>
+                            Toca el icono de instalación <strong>(🖥️ ⤓)</strong> en la barra de direcciones del navegador.
+                        </div>
+                    </div>
+                    <button onclick="document.getElementById('pwa-modal').remove()" style="width: 100%; margin-top: 20px; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer;">
+                        ¡Entendido!
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function initIndexTheme() {
+            const savedTheme = localStorage.getItem('pakua_theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+            updateIndexThemeBtn(isDark);
+        }
+
+        function toggleIndexTheme() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('pakua_theme', isDark ? 'dark' : 'light');
+            updateIndexThemeBtn(isDark);
+        }
+
+        function updateIndexThemeBtn(isDark) {
+            const btn = document.getElementById('btn-theme-index');
+            if (btn) {
+                btn.innerHTML = isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initIndexTheme);
+
+        if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('[PWA] Service Worker registrado:', reg.scope))
+                    .catch(err => console.warn('[PWA] Error en SW:', err));
+            });
+        }
+    </script>
 </body>
 </html>

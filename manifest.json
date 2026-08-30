@@ -1,0 +1,17 @@
+{
+  "name": "Frases Útiles Pa-Kua 2026",
+  "short_name": "Pakua Frases",
+  "description": "Guía multilingüe interactiva de conversación para el Encuentro Mundial Pa-Kua 2026 (50.º Aniversario) en San Pedro, Argentina.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f766e",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "Logo Pakua.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
