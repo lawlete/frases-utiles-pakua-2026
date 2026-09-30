@@ -66,6 +66,13 @@ const EVENT_2026_DATA = {
           tag: "Flyer Convocatória",
           description: "Informações gerais, disciplinas, mestres e convocatória internacional para as Aulas Abertas 2026.",
           file: "Info Aulas Abiertas Diciembre 2026/Portugues/flyer aulas pakua 2026 en portugues.jpeg"
+        },
+        {
+          id: "programa_pt",
+          title: "Programa Diário de Atividades",
+          tag: "Cronograma Oficial",
+          description: "Cronograma diário de treinamentos, oficinas, palestras e eventos especiais.",
+          file: "Info Aulas Abiertas Diciembre 2026/Portugues/Programa diario aulas abiertas Pakua 2026.jpeg"
         }
       ],
       autoDiscoveryCandidates: [
@@ -86,7 +93,15 @@ const EVENT_2026_DATA = {
       pendingMessage: "Information in process of generation",
       pendingDescription: "The official material in English will be published automatically in this section as soon as the organizing team completes the translation and design.",
       previewOtherLabel: "View available materials in other languages:",
-      items: [],
+      items: [
+        {
+          id: "programa_en",
+          title: "Daily Schedule of Activities",
+          tag: "Official Schedule",
+          description: "Day-by-day schedule with training hours, workshops, masterclasses, and special events.",
+          file: "Info Aulas Abiertas Diciembre 2026/Ingles/Programa diario aulas abiertas Pakua 2026.jpeg"
+        }
+      ],
       autoDiscoveryCandidates: [
         "Info Aulas Abiertas Diciembre 2026/Ingles/Flyer aulas abiertas Pakua 2026 en ingles.jpeg",
         "Info Aulas Abiertas Diciembre 2026/Ingles/flyer.jpeg",
@@ -94,7 +109,8 @@ const EVENT_2026_DATA = {
         "Info Aulas Abiertas Diciembre 2026/Ingles/flyer.png",
         "Info Aulas Abiertas Diciembre 2026/Ingles/programa.jpeg",
         "Info Aulas Abiertas Diciembre 2026/Ingles/programa.jpg",
-        "Info Aulas Abiertas Diciembre 2026/Ingles/Program aulas abiertas Pakua 2026.jpeg"
+        "Info Aulas Abiertas Diciembre 2026/Ingles/Program aulas abiertas Pakua 2026.jpeg",
+        "Info Aulas Abiertas Diciembre 2026/Ingles/Flyer aulas abiertas Pakua 2026.jpeg"
       ]
     },
     de: {
@@ -110,6 +126,8 @@ const EVENT_2026_DATA = {
       items: [],
       autoDiscoveryCandidates: [
         "Info Aulas Abiertas Diciembre 2026/Aleman/Flyer aulas abiertas Pakua 2026 en aleman.jpeg",
+        "Info Aulas Abiertas Diciembre 2026/Aleman/Flyer aulas abiertas Pakua 2026.jpeg",
+        "Info Aulas Abiertas Diciembre 2026/Aleman/Programa diario aulas abiertas Pakua 2026.jpeg",
         "Info Aulas Abiertas Diciembre 2026/Aleman/flyer.jpeg",
         "Info Aulas Abiertas Diciembre 2026/Aleman/flyer.jpg",
         "Info Aulas Abiertas Diciembre 2026/Aleman/flyer.png",

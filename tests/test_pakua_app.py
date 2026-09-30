@@ -136,4 +136,6 @@ def test_evento_san_pedro_2026_integration():
     assert os.path.exists(os.path.join(info_dir, 'Castellano', 'Flyer aulas abiertas Pakua 2026.jpeg'))
     assert os.path.exists(os.path.join(info_dir, 'Castellano', 'Programa diario aulas abiertas Pakua 2026.jpeg'))
     assert os.path.exists(os.path.join(info_dir, 'Portugues', 'flyer aulas pakua 2026 en portugues.jpeg'))
+    assert os.path.exists(os.path.join(info_dir, 'Portugues', 'Programa diario aulas abiertas Pakua 2026.jpeg'))
+    assert os.path.exists(os.path.join(info_dir, 'Ingles', 'Programa diario aulas abiertas Pakua 2026.jpeg'))
 
