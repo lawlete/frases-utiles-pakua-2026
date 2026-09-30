@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="manifest" href="manifest.json">
+    <title>Aulas Abiertas Diciembre 2026 - San Pedro | Pa-Kua</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #2563eb;
+            --teal: #0f766e;
+            --teal-light: #0d9488;
+            --red: #991b1b;
+            --red-light: #dc2626;
+            --gold: #d97706;
+            --gold-light: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        body.dark-mode {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            background-color: var(--bg);
+            color: var(--text-dark);
+        }
+
+        body.dark-mode::before {
+            opacity: 0.10;
+            filter: invert(1);
+        }
+
+        body.dark-mode .event-card,
+        body.dark-mode .info-box,
+        body.dark-mode .pending-card,
+        body.dark-mode .tab-btn {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .tab-btn:not(.active) {
+            background-color: #1e293b;
+            color: #94a3b8;
+        }
+
+        body.dark-mode footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-bottom: 40px;
+            position: relative;
+            min-height: 100vh;
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        /* Marca de agua de fondo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85vw;
+            max-width: 500px;
+            height: 85vw;
+            max-height: 500px;
+            background-image: url('Logo Pakua.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.25;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header, .container, footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 50%, #991b1b 100%);
+            color: white;
+            padding: 24px 16px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-nav {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-nav:hover, .btn-nav:active {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(0.98);
+        }
+
+        .header-logo {
+            max-height: 100px;
+            width: auto;
+            max-width: 85%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            margin-bottom: 10px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        /* Banner de información general */
+        .info-box {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .info-box-text h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        body.dark-mode .info-box-text h2 {
+            color: #60a5fa;
+        }
+
+        .info-box-text p {
+            font-size: 0.96rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .badge-anniversary {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+        }
+
+        /* Selector de Idiomas (Tabs) */
+        .tabs-header {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .tabs-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tabs-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.35);
+        }
+
+        .tab-count {
+            background: rgba(0, 0, 0, 0.12);
+            font-size: 0.76rem;
+            padding: 2px 7px;
+            border-radius: 12px;
+            font-weight: 800;
+        }
+
+        .tab-btn.active .tab-count {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        /* Título del idioma activo */
+        .section-lang-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-lang-header h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .section-lang-header p {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Cuadrícula de Materiales (Flyers y Programas) */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .materials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .material-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .material-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+        }
+
+        .material-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            background-color: #f1f5f9;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.dark-mode .material-img-wrapper {
+            background-color: #0f172a;
+        }
+
+        .material-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .material-img-wrapper:hover .material-img {
+            transform: scale(1.03);
+        }
+
+        .img-overlay-zoom {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.75);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+        }
+
+        .material-body {
+            padding: 18px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .material-tag {
+            align-self: flex-start;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        body.dark-mode .material-tag {
+            background: #1e3a8a;
+            color: #bfdbfe;
+        }
+
+        .material-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+
+        .material-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .material-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            flex: 1 1 120px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.15s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-primary-action {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
+        }
+
+        .btn-primary-action:hover {
+            background-color: var(--primary-light);
+        }
+
+        .btn-secondary-action {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        body.dark-mode .btn-secondary-action {
+            background-color: #334155;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        /* Tarjeta de Estado: "Información en proceso de generación" */
+        .pending-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            border: 2px dashed var(--border-color);
+            margin: 20px 0 30px;
+        }
+
+        .pending-icon {
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 16px;
+            display: inline-block;
+            animation: pulse-glow 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.08); opacity: 1; }
+        }
+
+        .pending-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .pending-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+
+        .pending-fallback-box {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 16px 20px;
+            max-width: 550px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+        }
+
+        body.dark-mode .pending-fallback-box {
+            background: #0f172a;
+        }
+
+        .pending-fallback-box p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .pending-lang-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-switch-lang {
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            background: var(--primary-light);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.15s, background 0.15s;
+        }
+
+        .btn-switch-lang:hover {
+            transform: scale(1.04);
+            background: var(--primary);
+        }
+
+        /* Lightbox / Modal para visualización a pantalla completa */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(8px);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-header {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            margin-bottom: 12px;
+            padding: 0 4px;
+        }
+
+        .lightbox-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .lightbox-close-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.6rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .lightbox-close-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.08);
+        }
+
+        .lightbox-content {
+            width: 100%;
+            max-width: 900px;
+            height: calc(100vh - 140px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-footer {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 30px;
+            padding: 20px 16px;
+            background-color: #e2e8f0;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top-bar">
+            <a href="index.html" class="btn-nav">⬅️ Menú Principal</a>
+            <button id="btn-theme" class="btn-nav" onclick="toggleTheme()">🌙 Modo Oscuro</button>
+        </div>
+        <img src="logo 50 aniversario Pakua.jpeg" alt="Logo 50 Aniversario Pa-Kua" class="header-logo">
+        <h1>📅 Aulas Abiertas Diciembre 2026</h1>
+        <p>Encuentro Internacional en la ciudad de San Pedro, Buenos Aires, Argentina ☯️ 50.º Aniversario</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Caja de información general del evento -->
+        <div class="info-box">
+            <div class="info-box-text">
+                <h2>📍 San Pedro 2026 — Información Oficial</h2>
+                <p>Consulta los flyers de convocatoria, cronogramas de clases, talleres y actividades oficiales disponibles en los diferentes idiomas de la comunidad internacional.</p>
+            </div>
+            <div class="badge-anniversary">
+                ✨ 50 Años Pa-Kua (1976-2026)
+            </div>
+        </div>
+
+        <!-- Selector de Idiomas (Tabs) -->
+        <div class="tabs-header">
+            <div class="tabs-title">Selecciona un idioma / Select language:</div>
+            <div class="tabs-wrapper" id="tabs-container">
+                <!-- Se genera dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Contenedor dinámico de contenidos del idioma activo -->
+        <div id="active-language-container">
+            <!-- Renderizado dinámico según el idioma -->
+        </div>
+
+    </div>
+
+    <!-- Lightbox / Visor de Imagen Pantalla Completa -->
+    <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightboxOnBackdrop(event)">
+        <div class="lightbox-header">
+            <div id="lightbox-title" class="lightbox-title">Flyer</div>
+            <button class="lightbox-close-btn" onclick="closeLightbox()" title="Cerrar">✕</button>
+        </div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Flyer ampliado">
+        </div>
+        <div class="lightbox-footer">
+            <a id="lightbox-download-btn" href="#" target="_blank" class="btn-action btn-primary-action" download style="max-width: 200px;">
+                📥 Abrir / Descargar
+            </a>
+            <button class="btn-action btn-secondary-action" onclick="closeLightbox()" style="max-width: 140px;">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <div>Idea de Laura M. y Alfredo L., alumnos de la Escuela Pakua Lincoln, Bs.As., Argentina. ☯️</div>
+        <div style="margin-top: 6px; font-size: 0.85rem; color: #64748b;">
+            Encuentro Internacional Pa-Kua 2026 — San Pedro, Argentina.
+        </div>
+    </footer>
+
+    <!-- Cargar catálogo de datos del evento -->
+    <script src="data/event_2026.js"></script>
+
+    <script>
+        /**
+         * LÓGICA DE CONTROL DE LA PÁGINA
+         */
+        let currentLang = 'es';
+
+        // Inicializar tema oscuro/claro sincronizado con index.html
+        function initTheme() {
+            const savedTheme = localStorage.getItem('pakua_theme');
+            const isDark = savedTheme === 'dark';
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+            updateThemeBtn(isDark);
+        }
+
+        function toggleTheme() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('pakua_theme', isDark ? 'dark' : 'light');
+            updateThemeBtn(isDark);
+        }
+
+        function updateThemeBtn(isDark) {
+            const btn = document.getElementById('btn-theme');
+            if (btn) {
+                btn.innerHTML = isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+            }
+        }
+
+        // Obtener idioma desde query param ?lang= o por defecto 'es'
+        function detectInitialLanguage() {
+            const params = new URLSearchParams(window.location.search);
+            const langParam = params.get('lang');
+            if (langParam && EVENT_2026_DATA.languages[langParam]) {
+                return langParam;
+            }
+            return 'es';
+        }
+
+        // Renderizar las pestañas de idiomas
+        function renderTabs() {
+            const tabsContainer = document.getElementById('tabs-container');
+            if (!tabsContainer || !window.EVENT_2026_DATA) return;
+
+            tabsContainer.innerHTML = '';
+            const languages = EVENT_2026_DATA.languages;
+
+            Object.keys(languages).forEach(key => {
+                const lang = languages[key];
+                const btn = document.createElement('button');
+                btn.className = `tab-btn ${key === currentLang ? 'active' : ''}`;
+                btn.id = `tab-btn-${key}`;
+                
+                const count = lang.items.length;
+                const badgeText = count > 0 ? `${count}` : '⏳';
+                
+                btn.innerHTML = `
+                    <span>${lang.tabLabel}</span>
+                    <span class="tab-count" title="${count > 0 ? count + ' disponibles' : 'En proceso'}">${badgeText}</span>
+                `;
+
+                btn.onclick = () => switchLanguage(key);
+                tabsContainer.appendChild(btn);
+            });
+        }
+
+        // Cambiar idioma activo
+        function switchLanguage(langKey) {
+            if (!EVENT_2026_DATA.languages[langKey]) return;
+            currentLang = langKey;
+
+            // Actualizar URL sin recargar
+            const url = new URL(window.location);
+            url.searchParams.set('lang', langKey);
+            window.history.replaceState({}, '', url);
+
+            // Actualizar clases de pestañas
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`tab-btn-${langKey}`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Renderizar contenido
+            renderLanguageContent(langKey);
+        }
+
+        // Renderizar el contenido según el idioma
+        function renderLanguageContent(langKey) {
+            const container = document.getElementById('active-language-container');
+            const lang = EVENT_2026_DATA.languages[langKey];
+            if (!container || !lang) return;
+
+            let html = `
+                <div class="section-lang-header">
+                    <h3>${lang.flag} ${lang.title}</h3>
+                    <p>${lang.subtitle}</p>
+                </div>
+            `;
+
+            // Si hay materiales disponibles
+            if (lang.items && lang.items.length > 0) {
+                html += `<div class="materials-grid">`;
+                lang.items.forEach((item, index) => {
+                    const encodedFile = encodeURI(item.file);
+                    html += `
+                        <div class="material-card">
+                            <div class="material-img-wrapper" onclick="openLightbox('${encodedFile}', '${escapeHtml(item.title)}')">
+                                <img src="${encodedFile}" alt="${escapeHtml(item.title)}" class="material-img" loading="lazy">
+                                <div class="img-overlay-zoom">🔍 Toca para ampliar</div>
+                            </div>
+                            <div class="material-body">
+                                <div class="material-tag">${item.tag || 'Oficial'}</div>
+                                <h4 class="material-title">${escapeHtml(item.title)}</h4>
+                                <p class="material-desc">${escapeHtml(item.description)}</p>
+                                <div class="material-actions">
+                                    <button class="btn-action btn-primary-action" onclick="openLightbox('${encodedFile}', '${escapeHtml(item.title)}')">
+                                        🔍 Ampliar
+                                    </button>
+                                    <a href="${encodedFile}" target="_blank" download class="btn-action btn-secondary-action">
+                                        📥 Abrir / Guardar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            } else {
+                // Si el material está en proceso de generación
+                html += `
+                    <div class="pending-card">
+                        <div class="pending-icon">⏳🎨</div>
+                        <h4 class="pending-title">${lang.pendingMessage}</h4>
+                        <p class="pending-desc">${lang.pendingDescription}</p>
+                        
+                        <div class="pending-fallback-box">
+                            <p>${lang.previewOtherLabel || 'Ver material disponible en otros idiomas:'}</p>
+                            <div class="pending-lang-buttons">
+                                <button class="btn-switch-lang" onclick="switchLanguage('es')">🇪🇸 Ver en Castellano</button>
+                                <button class="btn-switch-lang" onclick="switchLanguage('pt')">🇧🇷 Ver em Português</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        // Auto-descubrimiento en segundo plano: probar si se han subido archivos adicionales
+        function checkAutoDiscovery() {
+            if (!EVENT_2026_DATA || !EVENT_2026_DATA.languages) return;
+
+            Object.keys(EVENT_2026_DATA.languages).forEach(langKey => {
+                const lang = EVENT_2026_DATA.languages[langKey];
+                if (!lang.autoDiscoveryCandidates || lang.autoDiscoveryCandidates.length === 0) return;
+
+                lang.autoDiscoveryCandidates.forEach(candidatePath => {
+                    const testImg = new Image();
+                    testImg.onload = function() {
+                        // Archivo descubierto exitosamente
+                        const alreadyExists = lang.items.some(it => it.file === candidatePath);
+                        if (!alreadyExists) {
+                            const fileName = candidatePath.split('/').pop().replace(/\.[^/.]+$/, "");
+                            lang.items.push({
+                                id: `auto_${Date.now()}_${Math.random()}`,
+                                title: fileName,
+                                tag: "Nuevo Material",
+                                description: "Material detectado y publicado automáticamente.",
+                                file: candidatePath
+                            });
+                            // Actualizar vista si es el idioma activo
+                            renderTabs();
+                            if (currentLang === langKey) {
+                                renderLanguageContent(currentLang);
+                            }
+                        }
+                    };
+                    testImg.src = encodeURI(candidatePath);
+                });
+            });
+        }
+
+        // Lógica del Lightbox (Visor Pantalla Completa)
+        function openLightbox(src, title) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const titleEl = document.getElementById('lightbox-title');
+            const downloadBtn = document.getElementById('lightbox-download-btn');
+
+            if (!modal || !img) return;
+
+            img.src = src;
+            if (titleEl) titleEl.textContent = title || 'Flyer del Evento';
+            if (downloadBtn) {
+                downloadBtn.href = src;
+                downloadBtn.setAttribute('download', title || 'flyer_pakua_2026.jpg');
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+            document.body.style.overflow = '';
+        }
+
+        function closeLightboxOnBackdrop(event) {
+            if (event.target.id === 'lightbox-modal') {
+                closeLightbox();
+            }
+        }
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Utilidad para escapar texto HTML
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Inicialización al cargar el DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            currentLang = detectInitialLanguage();
+            renderTabs();
+            renderLanguageContent(currentLang);
+            
+            // Iniciar auto-descubrimiento en background
+            setTimeout(checkAutoDiscovery, 500);
+        });
+    </script>
+</body>
+</html>

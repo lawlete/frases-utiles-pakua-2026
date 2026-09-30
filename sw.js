@@ -6,15 +6,17 @@
  * ============================================================================
  */
 
-const CACHE_NAME = 'pakua-frases-v1';
+const CACHE_NAME = 'pakua-frases-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
+  './evento-san-pedro-2026.html',
   './portugues.html',
   './ingles.html',
   './aleman.html',
   './js/app.js',
   './stats.js',
+  './data/event_2026.js',
   './data/phrases_pt.json',
   './data/phrases_en.json',
   './data/phrases_de.json',

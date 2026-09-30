@@ -112,4 +112,28 @@ def test_pwa_manifest_and_sw():
         sw_content = f.read()
     assert "CACHE_NAME" in sw_content
     assert "ASSETS_TO_CACHE" in sw_content
+    assert "./evento-san-pedro-2026.html" in sw_content
+
+def test_evento_san_pedro_2026_integration():
+    """Verifica la existencia y enlace de la página del evento San Pedro 2026 y sus datos."""
+    evento_html = os.path.join(BASE_DIR, 'evento-san-pedro-2026.html')
+    assert os.path.exists(evento_html), "Falta evento-san-pedro-2026.html"
+    with open(evento_html, 'r', encoding='utf-8') as f:
+        html_content = f.read()
+    assert 'data/event_2026.js' in html_content
+    assert 'id="tabs-container"' in html_content
+    assert 'id="active-language-container"' in html_content
+    assert 'id="lightbox-modal"' in html_content
+
+    # Verificar index.html con banner y botón
+    index_html = os.path.join(BASE_DIR, 'index.html')
+    with open(index_html, 'r', encoding='utf-8') as f:
+        index_content = f.read()
+    assert 'href="evento-san-pedro-2026.html"' in index_content
+
+    # Verificar existencia de archivos en Info Aulas Abiertas Diciembre 2026
+    info_dir = os.path.join(BASE_DIR, 'Info Aulas Abiertas Diciembre 2026')
+    assert os.path.exists(os.path.join(info_dir, 'Castellano', 'Flyer aulas abiertas Pakua 2026.jpeg'))
+    assert os.path.exists(os.path.join(info_dir, 'Castellano', 'Programa diario aulas abiertas Pakua 2026.jpeg'))
+    assert os.path.exists(os.path.join(info_dir, 'Portugues', 'flyer aulas pakua 2026 en portugues.jpeg'))
 
