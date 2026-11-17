@@ -259,6 +259,147 @@
             }
         }
 
+        /* CARTEL CUENTA REGRESIVA - AULAS ABIERTAS SAN PEDRO 2026 */
+        .countdown-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 55%, #991b1b 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 26px 20px 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+            border: 2px solid rgba(251, 191, 36, 0.55);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .countdown-card {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(251, 191, 36, 0.65);
+        }
+
+        .countdown-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .countdown-title {
+            font-size: clamp(1.25rem, 3.2vw, 1.75rem);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .countdown-subtitle {
+            font-size: 0.96rem;
+            opacity: 0.92;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            max-width: 860px;
+            margin: 0 auto 20px;
+        }
+
+        .countdown-unit {
+            grid-column: span 2;
+            background: rgba(15, 23, 42, 0.34);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 14px;
+            padding: 14px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .countdown-unit.is-wide {
+            grid-column: span 3;
+        }
+
+        .countdown-value {
+            font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.02em;
+            color: #fef08a;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        .countdown-label {
+            font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+            color: #f8fafc;
+            opacity: 0.95;
+        }
+
+        .countdown-live-msg {
+            display: none;
+            background: rgba(15, 23, 42, 0.38);
+            border: 1px solid rgba(254, 240, 138, 0.6);
+            border-radius: 14px;
+            padding: 18px 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fef08a;
+            margin: 0 auto 18px;
+            max-width: 720px;
+        }
+
+        .countdown-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: #0f172a;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 0.94rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+            transition: transform 0.18s, background-color 0.18s;
+        }
+
+        .countdown-cta:hover {
+            transform: translateY(-2px);
+            background: #f8fafc;
+        }
+
+        @media (min-width: 700px) {
+            .countdown-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 14px;
+            }
+
+            .countdown-unit,
+            .countdown-unit.is-wide {
+                grid-column: span 1;
+                padding: 18px 10px;
+            }
+        }
+
         /* BANNER DESTACADO EVENTO SAN PEDRO 2026 */
         .event-banner-card {
             background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
@@ -494,6 +635,44 @@
     </header>
 
     <div class="container">
+
+        <!-- CARTEL GRANDE DE CUENTA REGRESIVA: AULAS ABIERTAS SAN PEDRO 2026 -->
+        <section class="countdown-card" aria-label="Cuenta regresiva Aulas Abiertas San Pedro 2026">
+            <div class="countdown-eyebrow">⏳ Cuenta Regresiva • 50.º Aniversario Pa-Kua</div>
+            <h2 class="countdown-title">Inicio de las Aulas Abiertas — San Pedro</h2>
+            <p class="countdown-subtitle">11 de Diciembre de 2026 • 00:00 hs (Argentina)</p>
+
+            <div id="san-pedro-countdown" class="countdown-grid" role="timer" aria-live="off">
+                <div class="countdown-unit is-wide">
+                    <span id="cd-weeks" class="countdown-value">00</span>
+                    <span class="countdown-label">Semanas</span>
+                </div>
+                <div class="countdown-unit is-wide">
+                    <span id="cd-days" class="countdown-value">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cd-hours" class="countdown-value">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cd-minutes" class="countdown-value">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cd-seconds" class="countdown-value">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+
+            <div id="san-pedro-live-msg" class="countdown-live-msg">
+                🎉 ¡Hoy comienzan las Aulas Abiertas de San Pedro 2026! Bienvenidos al 50.º Aniversario Pa-Kua
+            </div>
+
+            <a href="evento-san-pedro-2026.html" class="countdown-cta">
+                📅 Ver Info y Flyers del Evento ➔
+            </a>
+        </section>
 
         <div class="welcome-box">
             📲 <strong>¡Bienvenido/a!</strong><br>
@@ -1212,7 +1391,56 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', initIndexTheme);
+        function initSanPedroCountdown() {
+            const targetTime = new Date('2026-12-11T00:00:00-03:00').getTime();
+            const grid = document.getElementById('san-pedro-countdown');
+            const liveMsg = document.getElementById('san-pedro-live-msg');
+            const elWeeks = document.getElementById('cd-weeks');
+            const elDays = document.getElementById('cd-days');
+            const elHours = document.getElementById('cd-hours');
+            const elMinutes = document.getElementById('cd-minutes');
+            const elSeconds = document.getElementById('cd-seconds');
+
+            if (!grid || !elWeeks || !elDays || !elHours || !elMinutes || !elSeconds) return;
+
+            const pad = (n) => String(n).padStart(2, '0');
+            let timerId = null;
+
+            function updateCountdown() {
+                const diff = targetTime - Date.now();
+                if (diff <= 0) {
+                    grid.style.display = 'none';
+                    if (liveMsg) liveMsg.style.display = 'block';
+                    if (timerId) clearInterval(timerId);
+                    return;
+                }
+
+                const totalSeconds = Math.floor(diff / 1000);
+                const totalMinutes = Math.floor(totalSeconds / 60);
+                const totalHours = Math.floor(totalMinutes / 60);
+                const totalDays = Math.floor(totalHours / 24);
+
+                const weeks = Math.floor(totalDays / 7);
+                const days = totalDays % 7;
+                const hours = totalHours % 24;
+                const minutes = totalMinutes % 60;
+                const seconds = totalSeconds % 60;
+
+                elWeeks.textContent = pad(weeks);
+                elDays.textContent = pad(days);
+                elHours.textContent = pad(hours);
+                elMinutes.textContent = pad(minutes);
+                elSeconds.textContent = pad(seconds);
+            }
+
+            updateCountdown();
+            timerId = setInterval(updateCountdown, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initIndexTheme();
+            initSanPedroCountdown();
+        });
 
         if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
             window.addEventListener('load', () => {
